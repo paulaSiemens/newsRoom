@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, } from "react";
 import Parse from "parse";
 
 export function Ideas() {

@@ -44,6 +44,9 @@ export default function Login() {
             placeholder="Enter password"
           />
         </Form.Group>
+        <Button onClick={handleLoginAttempt} variant="primary" type="submit">
+          Submit
+        </Button>
       </Form>
     </>
   );
