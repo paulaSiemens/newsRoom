@@ -1,0 +1,20 @@
+.Header {
+    background-color: #5C88FA;
+    padding: 10px 0;
+}
+
+.cont--navIcons {
+    display: flex;
+    width: max-content;
+    height: max-content;
+    margin-left: auto;
+}
+
+.icon {
+    background-color: #0045F6;
+    border: hidden;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+}

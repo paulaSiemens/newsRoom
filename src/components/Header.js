@@ -17,7 +17,7 @@ export function Header() {
             )
         }
 
-{Parse.User.current( ) && (
+{Parse.User.current() && (
             <>
             <Nav.Link href="/submitIdea">Create new idea</Nav.Link>
             <Nav.Link href="/ideas">Selection</Nav.Link>
