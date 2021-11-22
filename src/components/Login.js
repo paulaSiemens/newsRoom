@@ -13,15 +13,14 @@ export default function Login() {
 
     console.log(username);
     console.log(password);
+    const user = new Parse.User();
+    user.setPassword(password);
+    user.setUsername(username);
+    user.logIn().then((loggedInUser) => {
+      navigate("/")
+      window.location.reload(false);
+    });
   }
-
-  const user = new Parse.User();
-  user.setPassword(password);
-  user.setUsername(username);
-  user.logIn().then((loggedInUser) => {
-    navigate("/Ideas")
-  });
-
   return (
     <>
       <br />
