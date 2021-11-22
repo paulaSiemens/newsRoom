@@ -27,7 +27,7 @@ export function Selection() {
       <br />
       <ul>
       {selection.map((idea, i) => (
-       <li key={i}><b>{idea.get("title")}</b><br/>{idea.get("description")}<hr/></li>
+       <li key={i}><img src={ idea.get("image").url()} alt="illustration expressing the idea"  /><br/><b>{idea.get("title")}</b><br/>{idea.get("description")}<hr/></li>
       ))}
       </ul>
     </>

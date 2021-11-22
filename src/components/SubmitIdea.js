@@ -4,8 +4,10 @@ import { Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router";
 
 export function SubmitIdea() {
+  
   const [title, setTitle] = useState();
   const [description, setDescription] = useState();
+  const [image, setImage] = useState();
 
   async function handleIdea(e) {
     e.preventDefault();
@@ -15,6 +17,8 @@ export function SubmitIdea() {
     newIdea.set("title", title);
     newIdea.set("description", description);
     newIdea.set("user", Parse.User.current());
+    image.name = title;
+    newIdea.set("image", image);
     try {
       await newIdea.save();
     } catch (error) {
@@ -26,6 +30,13 @@ export function SubmitIdea() {
     <>
       <Form>
         {/* title and idea forms are mostly the same - should be refactored to avoid duplicating code  */}
+        <Form.Group className="mb-3" controlId="formBasicImage">
+          <Form.Label>Image</Form.Label>
+          <Form.Control
+            type="file"
+            onChange={(e) => setImage(new Parse.File(e.target.files[0].name, e.target.files[0]))}
+          />
+        </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicUsername">
           <Form.Label>Title</Form.Label>
           <Form.Control
