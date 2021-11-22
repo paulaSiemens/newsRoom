@@ -5,8 +5,7 @@ import { useNavigate } from "react-router";
 
 export function SubmitIdea() {
   const [title, setTitle] = useState();
-  const [ideaDescription, setIdeaDescription] = useState();
-  const navigate = useNavigate();
+  const [description, setDescription] = useState();
 
   async function handleIdea(e) {
     e.preventDefault();
@@ -14,15 +13,14 @@ export function SubmitIdea() {
     const Idea = Parse.Object.extend("Idea");
     const newIdea = new Idea();
     newIdea.set("title", title);
-    newIdea.set("ideaDescription", ideaDescription);
+    newIdea.set("description", description);
     newIdea.set("user", Parse.User.current());
     try {
-      const newIdeaReference = await newIdea.save();
+      await newIdea.save();
     } catch (error) {
       alert(error);
     }
   }
-
 
   return (
     <>
@@ -39,13 +37,13 @@ export function SubmitIdea() {
           <Form.Label>Your idea</Form.Label>
           <Form.Control
             type="text"
-            onChange={(e) => setIdeaDescription(e.target.value)}
+            onChange={(e) => setDescription(e.target.value)}
             placeholder="Start typing your idea here"
           />
+           </Form.Group>
           <Button onClick={handleIdea} variant="primary" type="submit">
             Submit idea
           </Button>
-        </Form.Group>
       </Form>
     </>
   );
