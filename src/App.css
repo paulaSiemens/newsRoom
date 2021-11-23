@@ -4,3 +4,7 @@
     margin-right: auto;
     width: 480px;
 }
+
+.MainContainer {
+    display: flex;
+}

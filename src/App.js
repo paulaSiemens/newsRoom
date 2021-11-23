@@ -1,6 +1,5 @@
 import { Header } from "./components/Header";
-import NavbarLeft from "./components/NavbarLeft";
-import MainContent from "./components/MainContent";
+import MainContainer from "./components/MainContainer";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
@@ -23,8 +22,7 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-      <NavbarLeft />
-      <MainContent />
+      <MainContainer />
       <Footer />
     </div>
   );
