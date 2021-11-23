@@ -1,0 +1,19 @@
+.navbar-primary{
+    background-color: #0045F6;
+}
+
+.cont--icons {
+    display: flex;
+    width: max-content;
+    height: max-content;
+    margin-left: auto;
+}
+
+.icon {
+    background-color: #5C88FA;
+    border: hidden;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}

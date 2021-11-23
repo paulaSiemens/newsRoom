@@ -1,6 +1,5 @@
 import { Header } from "./components/Header";
-import HeaderMA from "./components/HeaderMA";
-import NavbarLeft from "/.components/NavbarLeft";
+import NavbarLeft from "./components/NavbarLeft";
 import MainContent from "./components/MainContent";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
@@ -13,8 +12,8 @@ import { BrowserRouter, Routes, Route, } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <HeaderMA />
-      <NavbarLeft />
+      <Header />
+
       <BrowserRouter>
         <Routes>
           <Route path="/signup" element={<Signup />} />
@@ -23,15 +22,9 @@ function App() {
           <Route path="/Ideas" element={<Ideas />} />
         </Routes>
       </BrowserRouter>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      < MainContent />
+
+      <NavbarLeft />
+      <MainContent />
       <Footer />
     </div>
   );
