@@ -11,7 +11,8 @@ import { BrowserRouter, Routes, Route, } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Header />     
+      <MainContainer />
 
       <BrowserRouter>
         <Routes>
@@ -22,7 +23,6 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-      <MainContainer />
       <Footer />
     </div>
   );
