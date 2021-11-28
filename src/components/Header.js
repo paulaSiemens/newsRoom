@@ -1,15 +1,18 @@
-import { Navbar, Container, Nav, Link } from "react-bootstrap";
+import { Navbar, Container, Nav } from "react-bootstrap";
 import Parse from "parse";
 import "../components/Header.css";
-import logout from "../images/logout.png";
-import iconNotif from "../images/iconNotif.png";
-import Profile from "../images/Profile.png";
+import logo from "../images/logo-header.png";
+import logout from "../images/icon-logout.png";
+import notif from "../images/icon-notif.png";
+import profile from "../images/icon-profile.png";
 
 export function Header() {
   return (
-    <Navbar bg="primary" variant="dark">
-      <Container>
-        <Navbar.Brand href="#home">newsRoom</Navbar.Brand>
+    <Navbar bg="primary" variant="dark" expand="lg">
+      <Container id="basic-navbar-container">
+        <Navbar.Brand href="#home">
+          <img src={logo}></img>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -29,11 +32,11 @@ export function Header() {
             )}
           </Nav>
         </Navbar.Collapse>
-        <div className="cont--icons">
+        {/* <div className="cont--icons">
           <img className="icon" src={logout}></img>
-          <img className="icon" src={iconNotif}></img>
-          <img className="icon" src={Profile}></img>
-        </div>
+          <img className="icon" src={notif}></img>
+          <img className="icon" src={profile}></img>
+        </div> */}
       </Container>
     </Navbar>
   );

@@ -1,15 +1,12 @@
 import React from "react"
 import MainContent from "./MainContent"
-import NavbarLeft from "./NavbarLeft"
 import "../App.css"
+import SideNav from "./SideNav"
 
-function MainContainer() {
+export default function MainContainer() {
     return (
         <div className="MainContainer">
-            <NavbarLeft />
+            <SideNav />
             <MainContent />
         </div>
-    )
-}
-
-export default MainContainer
+    )}

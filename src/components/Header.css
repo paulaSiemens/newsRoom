@@ -2,14 +2,26 @@
     background-color: #0045F6;
 }
 
+#basic-navbar-container {
+    margin: 0 20px;
+}
+
+.navbar-brand{
+    width: max-content;
+}
+
+.navbar-brand > img {
+    padding: 5px 10px;
+    width: max-content;
+}
+
 .cont--icons {
+    border: solid yellow;
     display: flex;
     width: max-content;
     height: max-content;
     margin-left: auto;
 }
-
-
 
 .icon {
     border: hidden;

@@ -3,7 +3,9 @@ import "./MainContent.css"
 
 function MainContent() {
     return (
-        <main className="MainContent">Here is main</main>
+        <main className="MainContent">
+
+        </main>
     )
 }
 

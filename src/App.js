@@ -5,6 +5,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import { SubmitIdea } from "./components/SubmitIdea";
 import { Ideas } from "./components/Ideas";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
 
@@ -19,11 +20,15 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/submitIdea" element={<SubmitIdea />} />
-          <Route path="/Ideas" element={<Ideas />} />
+          <Route path="/ideas" element={<Ideas />} />
+          {/* <Route path="/assigned" />
+          <Route path="/unassigned" />
+          <Route path="/submitted" />
+          <Route path="/archived" /> */}
         </Routes>
       </BrowserRouter>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
