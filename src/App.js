@@ -6,7 +6,8 @@ import Signup from "./components/Signup";
 import { SubmitIdea } from "./components/SubmitIdea";
 import { Selection } from "./components/Selection";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter, Routes, Route, } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Parse from "parse";
 
 function App() {
   return (
@@ -14,10 +15,10 @@ function App() {
       <Header />
       <BrowserRouter>
         <Routes>
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/submitIdea" element={<SubmitIdea />} />
-          <Route path="/selection" element={<Selection />} />
+          <Route path="/signup" element={!Parse.User.current( ) ? <Signup /> : <Navigate to='/'/>} />
+          <Route path="/login" element={!Parse.User.current( ) ? <Login /> : <Navigate to='/'/>} />
+          <Route path="/submitIdea" element={Parse.User.current( ) ? <SubmitIdea /> : <Navigate to='/login'/>} />
+          <Route path="/selection" element={Parse.User.current( ) ? <Selection /> : <Navigate to='/login'/>} />
         </Routes>
       </BrowserRouter>
       <br />
