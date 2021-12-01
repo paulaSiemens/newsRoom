@@ -4,36 +4,35 @@ import Parse from "parse";
 import { useNavigate } from "react-router";
 
 export default function Login() {
-  const [username, setUsername] = useState();
+  const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate();
 
   function handleLoginAttempt(e) {
     e.preventDefault();
 
-    console.log(username);
+    console.log(email);
     console.log(password);
+    const user = new Parse.User();
+    user.setPassword(password);
+    user.setUsername(email);
+    user.logIn().then((loggedInUser) => {
+      navigate("/")
+      window.location.reload(false);
+    });
   }
-
-  const user = new Parse.User();
-  user.setPassword(password);
-  user.setUsername(username);
-  user.logIn().then((loggedInUser) => {
-    navigate("/Ideas")
-  });
-
   return (
     <>
       <br />
       <br />
       <Form>
         {/* username and password forms are mostly the same - should be refactored to avoid duplicating code  */}
-        <Form.Group className="mb-3" controlId="formBasicUsername">
-          <Form.Label>Username</Form.Label>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Email address</Form.Label>
           <Form.Control
-            type="text"
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder="Enter username"
+            type="email"
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter email"
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">

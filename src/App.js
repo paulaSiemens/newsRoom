@@ -4,27 +4,39 @@ import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import { SubmitIdea } from "./components/SubmitIdea";
-import { Ideas } from "./components/Ideas";
-
+import { Selection } from "./components/Selection";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter, Routes, Route, } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Parse from "parse";
 
 function App() {
   return (
     <div className="App">
-      <Header />     
+      <Header />
       <MainContainer />
 
       <BrowserRouter>
         <Routes>
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/submitIdea" element={<SubmitIdea />} />
-          <Route path="/ideas" element={<Ideas />} />
-          {/* <Route path="/assigned" />
-          <Route path="/unassigned" />
-          <Route path="/submitted" />
-          <Route path="/archived" /> */}
+          <Route
+            path="/signup"
+            element={!Parse.User.current() ? <Signup /> : <Navigate to="/" />}
+          />
+          <Route
+            path="/login"
+            element={!Parse.User.current() ? <Login /> : <Navigate to="/" />}
+          />
+          <Route
+            path="/submitIdea"
+            element={
+              Parse.User.current() ? <SubmitIdea /> : <Navigate to="/login" />
+            }
+          />
+          <Route
+            path="/selection"
+            element={
+              Parse.User.current() ? <Selection /> : <Navigate to="/login" />
+            }
+          />
         </Routes>
       </BrowserRouter>
 
