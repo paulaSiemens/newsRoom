@@ -1,4 +1,4 @@
-import { Navbar, Container, Nav, Link } from "react-bootstrap";
+import { Navbar, Container, Nav, } from "react-bootstrap";
 import Parse from "parse";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -14,9 +14,11 @@ export function Header() {
 
   function handleLogoutAttempt(e) {
       alert("You have logged out");
-      setLoggedIn(false);
-      Parse.User.logOut();
-      window.location.href="/";
+      Parse.User.logOut().then((loggedOutUser) => {
+        setLoggedIn(false);
+        window.location.href="/";
+        window.location.reload(false);
+      });
     }
   if (!loggedIn) {return (
     <>
