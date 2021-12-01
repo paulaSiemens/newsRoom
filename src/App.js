@@ -15,10 +15,26 @@ function App() {
       <Header />
       <BrowserRouter>
         <Routes>
-          <Route path="/signup" element={!Parse.User.current( ) ? <Signup /> : <Navigate to='/'/>} />
-          <Route path="/login" element={!Parse.User.current( ) ? <Login /> : <Navigate to='/'/>} />
-          <Route path="/submitIdea" element={Parse.User.current( ) ? <SubmitIdea /> : <Navigate to='/login'/>} />
-          <Route path="/selection" element={Parse.User.current( ) ? <Selection /> : <Navigate to='/login'/>} />
+          <Route
+            path="/signup"
+            element={!Parse.User.current() ? <Signup /> : <Navigate to="/" />}
+          />
+          <Route
+            path="/login"
+            element={!Parse.User.current() ? <Login /> : <Navigate to="/" />}
+          />
+          <Route
+            path="/submitIdea"
+            element={
+              Parse.User.current() ? <SubmitIdea /> : <Navigate to="/login" />
+            }
+          />
+          <Route
+            path="/selection"
+            element={
+              Parse.User.current() ? <Selection /> : <Navigate to="/login" />
+            }
+          />
         </Routes>
       </BrowserRouter>
       <br />
