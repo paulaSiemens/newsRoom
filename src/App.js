@@ -21,14 +21,6 @@ function App() {
           <Route path="/selection" element={Parse.User.current( ) ? <Selection /> : <Navigate to='/login'/>} />
         </Routes>
       </BrowserRouter>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
       <MainContent />
       <Footer />
     </div>
