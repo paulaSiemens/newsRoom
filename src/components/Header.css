@@ -20,10 +20,10 @@
     width: max-content;
     height: max-content;
     margin-left: auto;
+    align-items: center;
 }
 
 .icon {
-    border: hidden;
     border-radius: 100%;
     width: 30px;
     height: 30px;

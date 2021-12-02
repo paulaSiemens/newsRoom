@@ -23,6 +23,10 @@ export function Header() {
     Parse.User.logOut();
     window.location.href = "/";
   }
+
+  {
+    /* TODO look into fix for code dublication */
+  }
   if (!loggedIn) {
     return (
       <>
@@ -50,14 +54,14 @@ export function Header() {
           <Navbar.Brand href="/">
             <img src={brand}></img>
           </Navbar.Brand>
+          {/* REVIEW navbar toogle? */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          {/* REVIEW do we need collapse? could replace icons maybe?*/}
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto" activeKey={currentTab}>
-              <Nav.Link href="/submitIdea">Create new idea</Nav.Link>
-              <Nav.Link href="/selection">Selection</Nav.Link>
-            </Nav>
+            <Nav className="me-auto" activeKey={currentTab}></Nav>
           </Navbar.Collapse>
           <div className="cont--icons">
+            {/* FIXME nav.link element not styling */}
             <Nav.Link href="" onClick={handleLogoutAttempt}>
               <img className="icon" src={logout}></img>
             </Nav.Link>

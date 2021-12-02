@@ -9,13 +9,14 @@ import SideNavItem from "./SideNavItem";
 import React from "react";
 import { Nav, Image } from "react-bootstrap";
 
-export default function SideNav(){
-    return (
-        <Nav className="flex-column" justify>
-        <SideNavItem link="/submitIdea" img= { add } linktxt="Add Idea"/>
-        <SideNavItem link="/assigned" img= { assigned } linktxt="Assigned"/>
-        <SideNavItem link="/unassigned" img= { unassigned } linktxt="Unassigned"/>
-        <SideNavItem link="/submitted" img= { submitted } linktxt="Submitted"/>
-        <SideNavItem link="/archived" img= { archived } linktxt="Archived"/>
-        </Nav>
-    )}
+export default function SideNav() {
+  return (
+    <Nav className="flex-column" justify>
+      <SideNavItem link="/submitIdea" img={add} linktxt="Create New Idea" />
+      <SideNavItem link="/assigned" img={assigned} linktxt="Assigned" />
+      <SideNavItem link="/selection" img={unassigned} linktxt="Unassigned" />
+      <SideNavItem link="/submitted" img={submitted} linktxt="Submitted" />
+      <SideNavItem link="/archived" img={archived} linktxt="Archived" />
+    </Nav>
+  );
+}
