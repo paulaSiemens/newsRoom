@@ -2,6 +2,11 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import Parse from "parse";
 import { useState } from "react";
 import { useEffect } from "react";
+import "./Header.css";
+import brand from "../images/logo-header.png";
+import logout from "../images/icon-logout.png";
+import notif from "../images/icon-notif.png";
+import profile from "../images/icon-profile.png";
 
 export function Header() {
   const [loggedIn, setLoggedIn] = useState();
@@ -21,9 +26,11 @@ export function Header() {
   if (!loggedIn) {
     return (
       <>
-        <Navbar bg="light" expand="lg">
-          <Container>
-            <Navbar.Brand href="/">newsRoom</Navbar.Brand>
+        <Navbar variant="dark" bg="primary">
+          <Container id="basic-navbar-container">
+            <Navbar.Brand href="/">
+              <img src={brand}></img>
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto" activeKey={currentTab}>
@@ -38,9 +45,11 @@ export function Header() {
   }
   return (
     <>
-      <Navbar bg="light" expand="lg">
-        <Container>
-          <Navbar.Brand href="/">newsRoom</Navbar.Brand>
+      <Navbar variant="dark" bg="primary">
+        <Container id="basic-navbar-container">
+          <Navbar.Brand href="/">
+            <img src={brand}></img>
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto" activeKey={currentTab}>
@@ -51,11 +60,11 @@ export function Header() {
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
-          {/* <div className="cont--icons">
-          <img className="icon" src={logout}></img>
-          <img className="icon" src={notif}></img>
-          <img className="icon" src={profile}></img>
-        </div> */}
+          <div className="cont--icons">
+            <img className="icon" src={logout}></img>
+            <img className="icon" src={notif}></img>
+            <img className="icon" src={profile}></img>
+          </div>
         </Container>
       </Navbar>
     </>

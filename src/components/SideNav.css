@@ -1,5 +1,5 @@
 .flex-column{
-    width: 320px;
+    width: max-content;
     background-color: #A4BDFF;
     height: 100%;
 }

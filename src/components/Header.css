@@ -3,7 +3,7 @@
 }
 
 #basic-navbar-container {
-    margin: 0 20px;
+    padding: 0 20px;
 }
 
 .navbar-brand{
@@ -16,7 +16,6 @@
 }
 
 .cont--icons {
-    border: solid yellow;
     display: flex;
     width: max-content;
     height: max-content;
