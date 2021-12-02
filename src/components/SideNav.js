@@ -7,7 +7,11 @@ import archived from "../images/icon-archived.png";
 import SideNavItem from "./SideNavItem";
 
 import React from "react";
-import { Nav, Image } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
+
+{
+  /* FIXME nav.link elements not styling */
+}
 
 export default function SideNav() {
   return (

@@ -8,7 +8,7 @@ import logout from "../images/icon-logout.png";
 import notif from "../images/icon-notif.png";
 import profile from "../images/icon-profile.png";
 
-export function Header() {
+export default function Header() {
   const [loggedIn, setLoggedIn] = useState();
   const [currentTab, setCurrentTab] = useState();
 
@@ -33,7 +33,7 @@ export function Header() {
         <Navbar variant="dark" bg="primary">
           <Container id="basic-navbar-container">
             <Navbar.Brand href="/">
-              <img src={brand}></img>
+              <img src={brand} alt="newsbrand header logo"></img>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -52,7 +52,7 @@ export function Header() {
       <Navbar variant="dark" bg="primary">
         <Container id="basic-navbar-container">
           <Navbar.Brand href="/">
-            <img src={brand}></img>
+            <img src={brand} alt="newsroom header logo"></img>
           </Navbar.Brand>
           {/* REVIEW navbar toogle? */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -61,12 +61,12 @@ export function Header() {
             <Nav className="me-auto" activeKey={currentTab}></Nav>
           </Navbar.Collapse>
           <div className="cont--icons">
-            {/* FIXME nav.link element not styling */}
+            {/* FIXME nav.link icon not styling */}
             <Nav.Link href="" onClick={handleLogoutAttempt}>
-              <img className="icon" src={logout}></img>
+              <img className="icon" src={logout} alt="icon logout"></img>
             </Nav.Link>
-            <img className="icon" src={notif}></img>
-            <img className="icon" src={profile}></img>
+            <img className="icon" src={notif} alt="icon notifications"></img>
+            <img className="icon" src={profile} alt="icon profile"></img>
           </div>
         </Container>
       </Navbar>

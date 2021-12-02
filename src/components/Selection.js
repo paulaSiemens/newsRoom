@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, React } from "react";
 import Parse from "parse";
 
-
-export function Selection() {
+export default function Selection() {
   const [selection, setSelection] = useState();
 
   useEffect(() => {
@@ -21,14 +20,24 @@ export function Selection() {
 
   return (
     <>
-       <br />
+      <br />
       <h1>Selection</h1>
       <br />
       <br />
       <ul>
-      {selection.map((idea, i) => (
-       <li key={i}><img src={ idea.get("image").url()} alt="illustration expressing the idea"  /><br/><b>{idea.get("title")}</b><br/>{idea.get("description")}<hr/></li>
-      ))}
+        {selection.map((idea, i) => (
+          <li key={i}>
+            <img
+              src={idea.get("image").url()}
+              alt="illustration expressing the idea"
+            />
+            <br />
+            <b>{idea.get("title")}</b>
+            <br />
+            {idea.get("description")}
+            <hr />
+          </li>
+        ))}
       </ul>
     </>
   );
