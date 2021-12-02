@@ -51,7 +51,7 @@ export default function Header() {
     <>
       <Navbar variant="dark" bg="primary">
         <Container id="basic-navbar-container">
-          <Navbar.Brand href="/">
+          <Navbar.Brand href="/assigned">
             <img src={brand} alt="newsroom header logo"></img>
           </Navbar.Brand>
           {/* REVIEW navbar toogle? */}

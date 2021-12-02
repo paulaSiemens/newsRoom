@@ -17,7 +17,7 @@ export default function Login() {
     user.setPassword(password);
     user.setUsername(email);
     user.logIn().then((loggedInUser) => {
-      navigate("/")
+      navigate("/assigned");
       window.location.reload(false);
     });
   }

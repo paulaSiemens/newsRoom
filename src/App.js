@@ -5,6 +5,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import SubmitIdea from "./components/SubmitIdea";
 import Selection from "./components/Selection";
+import Assigned from "./components/Assigned";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -49,6 +50,19 @@ function App() {
                 <div className="mainContainer">
                   <SideNav />
                   <Selection />
+                </div>
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/assigned"
+            element={
+              Parse.User.current() ? (
+                <div className="mainContainer">
+                  <SideNav />
+                  <Assigned />
                 </div>
               ) : (
                 <Navigate to="/login" />
