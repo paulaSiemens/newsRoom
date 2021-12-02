@@ -55,13 +55,12 @@ export function Header() {
             <Nav className="me-auto" activeKey={currentTab}>
               <Nav.Link href="/submitIdea">Create new idea</Nav.Link>
               <Nav.Link href="/selection">Selection</Nav.Link>
-              <Nav.Link href="" onClick={handleLogoutAttempt}>
-                Log Out
-              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
           <div className="cont--icons">
-            <img className="icon" src={logout}></img>
+            <Nav.Link href="" onClick={handleLogoutAttempt}>
+              <img className="icon" src={logout}></img>
+            </Nav.Link>
             <img className="icon" src={notif}></img>
             <img className="icon" src={profile}></img>
           </div>
