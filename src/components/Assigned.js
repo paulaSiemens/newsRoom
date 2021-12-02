@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function App() {
+export default function Assigned() {
   return <h1>assigned window goes here</h1>;
 }

@@ -6,6 +6,8 @@ import Signup from "./components/Signup";
 import SubmitIdea from "./components/SubmitIdea";
 import Selection from "./components/Selection";
 import Assigned from "./components/Assigned";
+import Submitted from "./components/Submitted";
+import Archived from "./components/Archived";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -63,6 +65,32 @@ function App() {
                 <div className="mainContainer">
                   <SideNav />
                   <Assigned />
+                </div>
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/submitted"
+            element={
+              Parse.User.current() ? (
+                <div className="mainContainer">
+                  <SideNav />
+                  <Submitted />
+                </div>
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/archived"
+            element={
+              Parse.User.current() ? (
+                <div className="mainContainer">
+                  <SideNav />
+                  <Archived />
                 </div>
               ) : (
                 <Navigate to="/login" />
