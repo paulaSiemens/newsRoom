@@ -8,6 +8,7 @@ import Selection from "./components/Selection";
 import Assigned from "./components/Assigned";
 import Submitted from "./components/Submitted";
 import Archived from "./components/Archived";
+import Start from "./components/Start";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -17,6 +18,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Start />
       <BrowserRouter>
         <Routes>
           <Route
@@ -94,7 +96,7 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

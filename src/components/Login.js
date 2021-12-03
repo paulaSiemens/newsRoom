@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import Parse from "parse";
 import { useNavigate } from "react-router";
+import logo from "../images/logo-brand.png";
 
 export default function Login() {
   const [email, setEmail] = useState();
@@ -23,9 +24,7 @@ export default function Login() {
   }
   return (
     <>
-      <br />
-      <br />
-      <Form>
+      <Form className="cont--login">
         {/* username and password forms are mostly the same - should be refactored to avoid duplicating code  */}
         <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>

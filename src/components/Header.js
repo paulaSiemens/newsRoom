@@ -3,10 +3,11 @@ import Parse from "parse";
 import { useState } from "react";
 import { useEffect } from "react";
 import "./Header.css";
-import brand from "../images/logo-header.png";
+import brand from "../images/logo-brand.png";
 import logout from "../images/icon-logout.png";
 import notif from "../images/icon-notif.png";
 import profile from "../images/icon-profile.png";
+import Start from "./Start";
 
 export default function Header() {
   const [loggedIn, setLoggedIn] = useState();
@@ -29,11 +30,10 @@ export default function Header() {
     <>
     <Navbar bg="primary" variant="dark">
       <Container>
-        <Navbar.Brand href="/">newsRoom</Navbar.Brand>
+        <Navbar.Brand href="/"><img src={brand} alt="newsroom header logo"></img></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto" activeKey={currentTab}>
-            
             <Nav.Link href="/signup">Sign Up</Nav.Link>
             <Nav.Link href="/login">Log In</Nav.Link>
             </Nav>
