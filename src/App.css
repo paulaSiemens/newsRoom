@@ -1,5 +1,4 @@
-.App {
-    margin-left: auto;
-    margin-right: auto;
-    width: 480px;
+.MainContainer {
+    display: flex;
+    height: 100%;
 }

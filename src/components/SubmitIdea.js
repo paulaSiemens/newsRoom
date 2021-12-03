@@ -3,8 +3,7 @@ import Parse from "parse";
 import { Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router";
 
-export function SubmitIdea() {
-  
+export default function SubmitIdea() {
   const [title, setTitle] = useState();
   const [description, setDescription] = useState();
   const [image, setImage] = useState();
@@ -34,7 +33,11 @@ export function SubmitIdea() {
           <Form.Label>Image</Form.Label>
           <Form.Control
             type="file"
-            onChange={(e) => setImage(new Parse.File(e.target.files[0].name, e.target.files[0]))}
+            onChange={(e) =>
+              setImage(
+                new Parse.File(e.target.files[0].name, e.target.files[0])
+              )
+            }
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicUsername">
@@ -51,10 +54,10 @@ export function SubmitIdea() {
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Start typing your idea here"
           />
-           </Form.Group>
-          <Button onClick={handleIdea} variant="primary" type="submit">
-            Submit idea
-          </Button>
+        </Form.Group>
+        <Button onClick={handleIdea} variant="primary" type="submit">
+          Submit idea
+        </Button>
       </Form>
     </>
   );
