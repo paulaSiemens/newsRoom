@@ -1,4 +1,4 @@
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, } from "react-bootstrap";
 import Parse from "parse";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -18,35 +18,31 @@ export default function Header() {
   }, []);
 
   function handleLogoutAttempt(e) {
-    alert("You have logged out");
-    setLoggedIn(false);
-    Parse.User.logOut();
-    window.location.href = "/";
-  }
-
-  {
-    /* TODO look into fix for code dublication */
-  }
-  if (!loggedIn) {
-    return (
-      <>
-        <Navbar variant="dark" bg="primary">
-          <Container id="basic-navbar-container">
-            <Navbar.Brand href="/">
-              <img src={brand} alt="newsbrand header logo"></img>
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="me-auto" activeKey={currentTab}>
-                <Nav.Link href="/signup">Sign Up</Nav.Link>
-                <Nav.Link href="/login">Log In</Nav.Link>
-              </Nav>
+      alert("You have logged out");
+      Parse.User.logOut().then((loggedOutUser) => {
+        setLoggedIn(false);
+        window.location.href="/";
+        window.location.reload(false);
+      });
+    }
+  if (!loggedIn) {return (
+    <>
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand href="/">newsRoom</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto" activeKey={currentTab}>
+            
+            <Nav.Link href="/signup">Sign Up</Nav.Link>
+            <Nav.Link href="/login">Log In</Nav.Link>
+            </Nav>
             </Navbar.Collapse>
           </Container>
         </Navbar>
       </>
     );
-  }
+}
   return (
     <>
       <Navbar variant="dark" bg="primary">
