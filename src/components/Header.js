@@ -27,7 +27,7 @@ export default function Header() {
     }
   if (!loggedIn) {return (
     <>
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="primary" variant="dark">
       <Container>
         <Navbar.Brand href="/">newsRoom</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -50,14 +50,11 @@ export default function Header() {
           <Navbar.Brand href="/assigned">
             <img src={brand} alt="newsroom header logo"></img>
           </Navbar.Brand>
-          {/* REVIEW navbar toogle? */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          {/* REVIEW do we need collapse? could replace icons maybe?*/}
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto" activeKey={currentTab}></Nav>
           </Navbar.Collapse>
           <div className="cont--icons">
-            {/* FIXME nav.link icon not styling */}
             <Nav.Link href="" onClick={handleLogoutAttempt}>
               <img className="icon" src={logout} alt="icon logout"></img>
             </Nav.Link>

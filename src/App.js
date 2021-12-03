@@ -13,11 +13,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Parse from "parse";
 
-{
-  /* FIXME refactor for resizing window reactive styling
-    NOTE look into reach-boostrap components - correct link setup for icons/sidenav? */
-}
-
 function App() {
   return (
     <div className="App">
