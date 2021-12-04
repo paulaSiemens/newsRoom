@@ -33,7 +33,6 @@ export default function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto" activeKey={currentTab}>
-            
             <Nav.Link href="/signup">Sign Up</Nav.Link>
             <Nav.Link href="/login">Log In</Nav.Link>
             </Nav>
