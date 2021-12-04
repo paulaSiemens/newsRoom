@@ -1,44 +1,73 @@
-import { useEffect, useState, React } from "react";
+import { useEffect, useState } from "react";
 import Parse from "parse";
+import { Accordion, Form, Button } from "react-bootstrap";
 
 export default function Selection() {
-  const [selection, setSelection] = useState();
+  const [ideas, setIdeas] = useState();
+  const [ideaId, setIdeaId] = useState();
+  const [userEmail, setUserEmail] = useState();
 
   useEffect(() => {
     const Idea = Parse.Object.extend("Idea");
-    const query = new Parse.Query(Idea);
-
-    const ideas = query.find().then((ideas) => {
+    const IdeaQuery = new Parse.Query(Idea);
+    IdeaQuery.find().then((ideas) => {
       console.log(ideas);
-      setSelection(ideas);
-    });
+      setIdeas(ideas);
+    }); 
   }, []);
 
-  if (!selection) {
+  async function handleAssigned(e) {
+    e.preventDefault();
+
+    const Assigned = Parse.Object.extend("Assigned");
+    const newAssigned = new Assigned();
+    const UserQuery = new Parse.Query(Parse.User);
+    UserQuery.equalTo("username", userEmail);
+    UserQuery.find().then((user) => {
+      console.log(user[0].id);
+      newAssigned.set("userId", user[0]);
+      newAssigned.set("ideaId", ideaId);
+      try {
+         newAssigned.save();
+         alert('You assigned "' + ideaId.get('title') + '" to the user with the email ' + userEmail);
+      } catch (error) {
+        alert(error);
+      }
+    }); 
+  }
+
+  if (!ideas) {
     return <p>Loading...</p>;
   }
 
   return (
     <>
-      <br />
-      <h1>Selection</h1>
-      <br />
-      <br />
-      <ul>
-        {selection.map((idea, i) => (
-          <li key={i}>
+      <Accordion defaultActiveKey="0">
+        {ideas.map((idea, i) => (
+          <>
+            <Accordion.Item eventKey={i}>
+            <Accordion.Header><b>{idea.get("title")}</b></Accordion.Header>
+            <Accordion.Body>
             <img
               src={idea.get("image").url()}
               alt="illustration expressing the idea"
             />
             <br />
-            <b>{idea.get("title")}</b>
-            <br />
             {idea.get("description")}
-            <hr />
-          </li>
+            <Form>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control type="email" onChange={(e) => {setUserEmail(e.target.value); setIdeaId(idea)}} placeholder="Enter email" />
+        </Form.Group>
+        <Button onClick={handleAssigned} variant="primary" type="submit">
+          Assign
+        </Button>
+      </Form>{" "}
+            </Accordion.Body>
+            </Accordion.Item>
+            </>
         ))}
-      </ul>
+     </Accordion>
     </>
   );
 }
