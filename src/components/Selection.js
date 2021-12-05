@@ -10,11 +10,12 @@ export default function Selection() {
   useEffect(() => {
     const Idea = Parse.Object.extend("Idea");
     const IdeaQuery = new Parse.Query(Idea);
+    IdeaQuery.equalTo("status", "Unassigned");
     IdeaQuery.find().then((ideas) => {
       console.log(ideas);
       setIdeas(ideas);
     }); 
-  }, []);
+  }, [ideas]);
 
   async function handleAssigned(e) {
     e.preventDefault();
@@ -29,6 +30,8 @@ export default function Selection() {
       newAssigned.set("ideaId", ideaId);
       try {
          newAssigned.save();
+         ideaId.set("status", "Assigned");
+         ideaId.save();
          alert('You assigned "' + ideaId.get('title') + '" to the user with the email ' + userEmail);
       } catch (error) {
         alert(error);
