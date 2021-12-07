@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useReducer } from "react";
 import Parse from "parse";
 import { Accordion, Form, Button } from "react-bootstrap";
 
@@ -6,6 +6,7 @@ export default function Selection() {
   const [ideas, setIdeas] = useState();
   const [ideaId, setIdeaId] = useState();
   const [userEmail, setUserEmail] = useState();
+  const [assigned, forceUpdate] = useReducer(x => x + 1, 0);
 
   useEffect(() => {
     const Idea = Parse.Object.extend("Idea");
@@ -15,7 +16,7 @@ export default function Selection() {
       console.log(ideas);
       setIdeas(ideas);
     }); 
-  }, [ideas]);
+  }, [assigned]);
 
   async function handleAssigned(e) {
     e.preventDefault();
@@ -28,11 +29,13 @@ export default function Selection() {
       console.log(user[0].id);
       newAssigned.set("userId", user[0]);
       newAssigned.set("ideaId", ideaId);
+      ideaId.set("status", "Assigned");
       try {
          newAssigned.save();
-         ideaId.set("status", "Assigned");
-         ideaId.save();
-         alert('You assigned "' + ideaId.get('title') + '" to the user with the email ' + userEmail);
+         ideaId.save().then((assignedIdea) => {
+          alert('You assigned "' + ideaId.get('title') + '" to the user with the email ' + userEmail);
+          forceUpdate();
+        });
       } catch (error) {
         alert(error);
       }

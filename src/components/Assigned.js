@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useReducer } from "react";
 import Parse from "parse";
 import { Accordion, Form, Button } from "react-bootstrap";
 
 export default function Assigned() {
   const [assignments, setAssignments] = useState();
+  const [submitted, forceUpdate] = useReducer(x => x + 1, 0);
 
   useEffect(() => {
     const Assigned = Parse.Object.extend("Assigned");
@@ -15,16 +16,18 @@ export default function Assigned() {
       setAssignments(assignments);
       console.log(assignments);
     });
-  }, [assignments]);
+  }, [submitted]);
 
 
   async function handleSubmitted(e, assignment) {
     e.preventDefault();
     const idea = assignment.get("ideaId");
     try {
-      assignment.destroy();
-      alert('You submitted "' + idea.get("title") + '"');
       idea.set("status", "Submitted").save();
+      assignment.destroy().then((submittedIdea) => {
+        alert('You submitted "' + idea.get("title") + '"');
+        forceUpdate();
+      });
    } catch (error) {
      alert(error);
    }
