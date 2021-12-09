@@ -20,6 +20,7 @@ export default function SubmitIdea() {
     newIdea.set("image", image);
     try {
       await newIdea.save();
+      alert('You submitted "' + title + '" as an article suggestion');
     } catch (error) {
       alert(error);
     }
