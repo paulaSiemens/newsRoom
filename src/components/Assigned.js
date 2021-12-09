@@ -46,7 +46,7 @@ export default function Assigned() {
             <Accordion.Header><b>{assignment.get("ideaId").get("title")}</b></Accordion.Header>
             <Accordion.Body>
               
-            <img
+            <img className="acc-img"
               src={assignment.get("ideaId").get("image").url()}
               alt="illustration expressing the idea"
             />

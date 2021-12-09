@@ -1,0 +1,63 @@
+.canvas{
+    background-color: #5C88FA;
+    border: 1px solid #5C88FA;
+}
+/* does not reach edge if no border? */
+
+.cont--login{
+    width: 600px;
+    height: max-content;
+    margin: 15% auto;
+    color: white;
+}
+
+.cont--start{
+    width: 600px;
+    height: max-content;
+    margin: 15% auto;
+    color: white;
+}
+
+.cont--start > h1 {
+    margin: 5% auto;
+    width: max-content;
+    height: max-content;
+    font-size: 68px;
+    font-family: 'roboto', sans-serif;
+    color: white;
+}
+
+.cont--start > img {
+    width: max-content;
+    height: max-content;
+    margin: 5% 33%;
+}
+
+/* .cont--btn-start{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin: 40px;
+}
+
+.cont--btn-start > button {
+    width: 150px;
+    height: 150px;
+    border: hidden;
+    border-radius: 100%;
+    background-color: #A4BDFF;
+    color: white;
+    margin: 20px;
+} */
+
+/* .cont--logo{
+    margin: 20% auto;
+    padding: 20px 30px;
+    width: max-content;
+    background-color: #0045F6;
+    border: 5px solid white;
+} */
+
+.form-label{
+    color: white;
+}

@@ -54,7 +54,7 @@ export default function Selection() {
             <Accordion.Item eventKey={i}>
             <Accordion.Header><b>{idea.get("title")}</b></Accordion.Header>
             <Accordion.Body>
-            <img
+            <img className="acc-img"
               src={idea.get("image").url()}
               alt="illustration expressing the idea"
             />

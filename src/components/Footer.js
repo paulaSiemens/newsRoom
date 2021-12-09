@@ -1,9 +1,11 @@
 import React from "react"
-import "../App.css";
+import { Navbar } from "react-bootstrap";
 
 function Footer() {
     return (
-        <footer></footer>
+        <Navbar className="footer" bg="primary">
+            <p>Technical Interaction Design - Group 15</p>
+        </Navbar>
     )
 }
 

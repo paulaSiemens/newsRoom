@@ -9,10 +9,6 @@ import SideNavItem from "./SideNavItem";
 import React from "react";
 import { Nav } from "react-bootstrap";
 
-{
-  /* FIXME nav.link elements not styling */
-}
-
 export default function SideNav() {
   return (
     <Nav className="flex-column" justify>

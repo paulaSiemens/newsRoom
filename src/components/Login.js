@@ -3,6 +3,7 @@ import { Form, Button } from "react-bootstrap";
 import Parse from "parse";
 import { useNavigate } from "react-router";
 import logo from "../images/logo-brand.png";
+import "./Start.css";
 
 export default function Login() {
   const [email, setEmail] = useState();
@@ -23,6 +24,7 @@ export default function Login() {
     });
   }
   return (
+    <div className="canvas">
     <>
       <Form className="cont--login">
         {/* username and password forms are mostly the same - should be refactored to avoid duplicating code  */}
@@ -47,5 +49,6 @@ export default function Login() {
         </Button>
       </Form>
     </>
+    </div>
   );
 }

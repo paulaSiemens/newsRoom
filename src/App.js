@@ -18,9 +18,12 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Start />
       <BrowserRouter>
         <Routes>
+        <Route
+            path="/"
+            element={!Parse.User.current() ? <Start /> : <Navigate to="/assigned" />}
+          />
           <Route
             path="/signup"
             element={!Parse.User.current() ? <Signup /> : <Navigate to="/" />}

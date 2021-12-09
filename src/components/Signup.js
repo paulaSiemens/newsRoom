@@ -2,6 +2,7 @@ import { Form, Button } from "react-bootstrap";
 import Parse from "parse";
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import "./Start.css";
 
 export default function Signup() {
   const [email, setEmail] = useState();
@@ -31,6 +32,7 @@ export default function Signup() {
   }
 
   return (
+    <div className="canvas">
     <>
       <br />
       <br />
@@ -58,5 +60,6 @@ export default function Signup() {
         </Button>
       </Form>{" "}
     </>
+    </div>
   );
 }

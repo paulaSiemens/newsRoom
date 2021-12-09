@@ -28,7 +28,7 @@ export default function SubmitIdea() {
 
   return (
     <>
-      <Form>
+      <Form className="cont--submitIdea">
         {/* title and idea forms are mostly the same - should be refactored to avoid duplicating code  */}
         <Form.Group className="mb-3" controlId="formBasicImage">
           <Form.Label>Image</Form.Label>
