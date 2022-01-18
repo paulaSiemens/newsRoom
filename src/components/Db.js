@@ -71,9 +71,27 @@ export function handleLoginAttempt(email, password, callBack) {
   user.setPassword(password);
   user.setUsername(email);
   user.logIn().then((loggedInUser) => {
+    alert("You have logged in with the username " + email);
     callBack("/assigned");
     window.location.reload(false);
   });
+}
+
+export function handleSignupAttempt(email, password, role, callBack) {
+  const newUser = new Parse.User();
+  newUser.set("username", email);
+  newUser.set("email", email);
+  newUser.set("password", password);
+  newUser.set("role", role);
+  try {
+    newUser.save().then((signedUpUser) => {
+      alert("You have signed up as " + role + " with the username " + email);
+      callBack("/login");
+      window.location.reload(false);
+    });
+  } catch (error) {
+    alert(error);
+  }
 }
 
 export default {
@@ -83,4 +101,5 @@ export default {
   getSubmitted,
   handleAssigned,
   handleLoginAttempt,
+  handleSignupAttempt,
 };
