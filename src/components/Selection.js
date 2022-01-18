@@ -1,5 +1,4 @@
 import { useEffect, useState, useReducer } from "react";
-import Parse from "parse";
 import { Accordion, Form, Button } from "react-bootstrap";
 import Db from "./Db";
 

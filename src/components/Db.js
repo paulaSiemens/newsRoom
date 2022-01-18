@@ -94,6 +94,26 @@ export function handleSignupAttempt(email, password, role, callBack) {
   }
 }
 
+export function handleIdea(imageName, imageData, title, description, callBack) {
+  const Idea = Parse.Object.extend("Idea");
+  const newIdea = new Idea();
+  const image = new Parse.File(imageName, imageData);
+  newIdea.set("title", title);
+  newIdea.set("description", description);
+  newIdea.set("user", Parse.User.current());
+  image.name = title;
+  newIdea.set("image", image);
+  try {
+    newIdea.save().then((ideaSubmitted) => {
+      alert('You submitted "' + title + '" as an article suggestion');
+      callBack("/selection");
+      window.location.reload(false);
+    });
+  } catch (error) {
+    alert(error);
+  }
+}
+
 export default {
   getArchived,
   getAssigned,
@@ -102,4 +122,5 @@ export default {
   handleAssigned,
   handleLoginAttempt,
   handleSignupAttempt,
+  handleIdea,
 };
