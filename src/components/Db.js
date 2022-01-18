@@ -1,5 +1,4 @@
 import Parse from "parse";
-import { useNavigate } from "react-router";
 
 export function getArchived(callBack) {
   const Idea = Parse.Object.extend("Idea");
