@@ -1,4 +1,5 @@
 import Parse from "parse";
+import { useNavigate } from "react-router";
 
 export function getArchived(callBack) {
   const Idea = Parse.Object.extend("Idea");
@@ -65,10 +66,21 @@ export function handleAssigned(userEmail, ideaId, callBack) {
   });
 }
 
+export function handleLoginAttempt(email, password, callBack) {
+  const user = new Parse.User();
+  user.setPassword(password);
+  user.setUsername(email);
+  user.logIn().then((loggedInUser) => {
+    callBack("/assigned");
+    window.location.reload(false);
+  });
+}
+
 export default {
   getArchived,
   getAssigned,
   getUnassigned,
-  handleAssigned,
   getSubmitted,
+  handleAssigned,
+  handleLoginAttempt,
 };
