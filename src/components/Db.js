@@ -65,6 +65,20 @@ export function handleAssigned(userEmail, ideaId, callBack) {
   });
 }
 
+export function handleArchived(idea, callBack) {
+  try {
+    idea
+      .set("status", "Archived")
+      .save()
+      .then((archivedIdea) => {
+        alert('You archived "' + idea.get("title") + '"');
+        callBack();
+      });
+  } catch (error) {
+    alert(error);
+  }
+}
+
 export function handleLoginAttempt(email, password, callBack) {
   const user = new Parse.User();
   user.setPassword(password);
@@ -119,6 +133,7 @@ export default {
   getUnassigned,
   getSubmitted,
   handleAssigned,
+  handleArchived,
   handleLoginAttempt,
   handleSignupAttempt,
   handleIdea,

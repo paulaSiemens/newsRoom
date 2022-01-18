@@ -10,21 +10,6 @@ export default function Submitted() {
     Db.getSubmitted(setIdeas);
   }, [archived]);
 
-  async function handleArchived(e, idea) {
-    e.preventDefault();
-    try {
-      idea
-        .set("status", "Archived")
-        .save()
-        .then((archivedIdea) => {
-          alert('You archived "' + idea.get("title") + '"');
-          forceUpdate();
-        });
-    } catch (error) {
-      alert(error);
-    }
-  }
-
   if (!ideas) {
     return <p>Loading...</p>;
   }
@@ -50,7 +35,8 @@ export default function Submitted() {
                 <Form>
                   <Button
                     onClick={(e) => {
-                      handleArchived(e, idea);
+                      e.preventDefault();
+                      Db.handleArchived(idea, forceUpdate);
                     }}
                     variant="primary"
                     type="submit"
