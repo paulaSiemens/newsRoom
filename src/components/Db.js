@@ -65,6 +65,19 @@ export function handleAssigned(userEmail, ideaId, callBack) {
   });
 }
 
+export function handleSubmitted(assignment, callBack) {
+  const idea = assignment.get("ideaId");
+  try {
+    idea.set("status", "Submitted").save();
+    assignment.destroy().then((submittedIdea) => {
+      alert('You submitted "' + idea.get("title") + '"');
+      callBack();
+    });
+  } catch (error) {
+    alert(error);
+  }
+}
+
 export function handleArchived(idea, callBack) {
   try {
     idea
@@ -133,6 +146,7 @@ export default {
   getUnassigned,
   getSubmitted,
   handleAssigned,
+  handleSubmitted,
   handleArchived,
   handleLoginAttempt,
   handleSignupAttempt,

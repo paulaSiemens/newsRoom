@@ -10,20 +10,6 @@ export default function Assigned() {
     Db.getAssigned(setAssignments);
   }, [submitted]);
 
-  async function handleSubmitted(e, assignment) {
-    e.preventDefault();
-    const idea = assignment.get("ideaId");
-    try {
-      idea.set("status", "Submitted").save();
-      assignment.destroy().then((submittedIdea) => {
-        alert('You submitted "' + idea.get("title") + '"');
-        forceUpdate();
-      });
-    } catch (error) {
-      alert(error);
-    }
-  }
-
   if (!assignments) {
     return <p>Loading...</p>;
   }
@@ -48,7 +34,10 @@ export default function Assigned() {
                 <br />
                 <Form>
                   <Button
-                    onClick={(e) => handleSubmitted(e, assignment)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      Db.handleSubmitted(assignment, forceUpdate);
+                    }}
                     variant="primary"
                     type="submit"
                   >
