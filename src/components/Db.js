@@ -103,6 +103,15 @@ export function handleLoginAttempt(email, password, callBack) {
   });
 }
 
+export function handleLogoutAttempt(callBack) {
+  alert("You have logged out");
+  Parse.User.logOut().then((loggedOutUser) => {
+    callBack(false);
+    window.location.href = "/";
+    window.location.reload(false);
+  });
+}
+
 export function handleSignupAttempt(email, password, role, callBack) {
   const newUser = new Parse.User();
   newUser.set("username", email);
@@ -140,6 +149,14 @@ export function handleIdea(imageName, imageData, title, description, callBack) {
   }
 }
 
+export function isLoggedIn(callBack) {
+  if (Parse.User.current()) {
+    callBack(true);
+  } else {
+    callBack(false);
+  }
+}
+
 export default {
   getArchived,
   getAssigned,
@@ -149,6 +166,8 @@ export default {
   handleSubmitted,
   handleArchived,
   handleLoginAttempt,
+  handleLogoutAttempt,
   handleSignupAttempt,
   handleIdea,
+  isLoggedIn,
 };
