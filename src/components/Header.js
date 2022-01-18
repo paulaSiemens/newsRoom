@@ -13,7 +13,7 @@ export default function Header() {
   const [currentTab, setCurrentTab] = useState();
 
   useEffect(() => {
-    Db.isLoggedIn(setLoggedIn);
+    Db.isLoggedInCallBack(setLoggedIn);
     setCurrentTab(window.location.pathname);
   }, []);
 

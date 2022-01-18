@@ -12,7 +12,7 @@ import Start from "./components/Start";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Parse from "parse";
+import Db from "./components/Db";
 
 function App() {
   return (
@@ -20,22 +20,22 @@ function App() {
       <Header />
       <BrowserRouter>
         <Routes>
-        <Route
+          <Route
             path="/"
-            element={!Parse.User.current() ? <Start /> : <Navigate to="/assigned" />}
+            element={!Db.isLoggedIn() ? <Start /> : <Navigate to="/assigned" />}
           />
           <Route
             path="/signup"
-            element={!Parse.User.current() ? <Signup /> : <Navigate to="/" />}
+            element={!Db.isLoggedIn() ? <Signup /> : <Navigate to="/" />}
           />
           <Route
             path="/login"
-            element={!Parse.User.current() ? <Login /> : <Navigate to="/" />}
+            element={!Db.isLoggedIn() ? <Login /> : <Navigate to="/" />}
           />
           <Route
             path="/submitIdea"
             element={
-              Parse.User.current() ? (
+              Db.isLoggedIn() ? (
                 <div className="mainContainer">
                   <SideNav />
                   <SubmitIdea />
@@ -48,7 +48,7 @@ function App() {
           <Route
             path="/selection"
             element={
-              Parse.User.current() ? (
+              Db.isLoggedIn() ? (
                 <div className="mainContainer">
                   <SideNav />
                   <Selection />
@@ -61,7 +61,7 @@ function App() {
           <Route
             path="/assigned"
             element={
-              Parse.User.current() ? (
+              Db.isLoggedIn() ? (
                 <div className="mainContainer">
                   <SideNav />
                   <Assigned />
@@ -74,7 +74,7 @@ function App() {
           <Route
             path="/submitted"
             element={
-              Parse.User.current() ? (
+              Db.isLoggedIn() ? (
                 <div className="mainContainer">
                   <SideNav />
                   <Submitted />
@@ -87,7 +87,7 @@ function App() {
           <Route
             path="/archived"
             element={
-              Parse.User.current() ? (
+              Db.isLoggedIn() ? (
                 <div className="mainContainer">
                   <SideNav />
                   <Archived />

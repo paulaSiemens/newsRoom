@@ -149,12 +149,25 @@ export function handleIdea(imageName, imageData, title, description, callBack) {
   }
 }
 
-export function isLoggedIn(callBack) {
+export function isLoggedInCallBack(callBack) {
   if (Parse.User.current()) {
     callBack(true);
   } else {
     callBack(false);
   }
+}
+
+export function isLoggedIn() {
+  if (Parse.User.current()) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+export function connectToServer(applicationId, javascriptKey, serverURL) {
+  Parse.initialize(applicationId, javascriptKey);
+  Parse.serverURL = serverURL;
 }
 
 export default {
@@ -169,5 +182,7 @@ export default {
   handleLogoutAttempt,
   handleSignupAttempt,
   handleIdea,
+  isLoggedInCallBack,
   isLoggedIn,
+  connectToServer,
 };
