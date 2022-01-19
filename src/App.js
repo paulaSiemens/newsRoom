@@ -8,6 +8,7 @@ import Selection from "./components/Selection";
 import Assigned from "./components/Assigned";
 import Submitted from "./components/Submitted";
 import Archived from "./components/Archived";
+import Employees from "./components/Employees";
 import Start from "./components/Start";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -91,6 +92,19 @@ function App() {
                 <div className="mainContainer">
                   <SideNav />
                   <Archived />
+                </div>
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/employees"
+            element={
+              Db.isLoggedIn() ? (
+                <div className="mainContainer">
+                  <SideNav />
+                  <Employees />
                 </div>
               ) : (
                 <Navigate to="/login" />

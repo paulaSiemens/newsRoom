@@ -38,6 +38,15 @@ export function getSubmitted(callBack) {
   });
 }
 
+export function getUsers(callBack) {
+  const User = Parse.Object.extend("User");
+  const UserQuery = new Parse.Query(User);
+  //IdeaQuery.equalTo("status", "Submitted");
+  UserQuery.find().then((users) => {
+    callBack(users);
+  });
+}
+
 export function handleAssigned(userEmail, ideaId, callBack) {
   const Assigned = Parse.Object.extend("Assigned");
   const newAssigned = new Assigned();
@@ -183,6 +192,7 @@ export default {
   getAssigned,
   getUnassigned,
   getSubmitted,
+  getUsers,
   handleAssigned,
   handleSubmitted,
   handleArchived,
