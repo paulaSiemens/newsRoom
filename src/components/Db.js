@@ -165,6 +165,14 @@ export function isLoggedIn() {
   }
 }
 
+export function getUserRole() {
+  return Parse.User.current().get("role");
+}
+
+export function getUserId() {
+  return Parse.User.current().id;
+}
+
 export function connectToServer(applicationId, javascriptKey, serverURL) {
   Parse.initialize(applicationId, javascriptKey);
   Parse.serverURL = serverURL;
@@ -184,5 +192,7 @@ export default {
   handleIdea,
   isLoggedInCallBack,
   isLoggedIn,
+  getUserRole,
+  getUserId,
   connectToServer,
 };
