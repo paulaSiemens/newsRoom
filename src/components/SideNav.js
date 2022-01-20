@@ -26,6 +26,8 @@ export default function SideNav() {
       <Nav className="flex-column">
         <SideNavItem link="/submitIdea" img={add} linktxt="Create New Idea" />
         <SideNavItem link="/assigned" img={assigned} linktxt="Assigned" />
+        <SideNavItem link="/submitted" img={submitted} linktxt="Submitted" />
+        <SideNavItem link="/archived" img={archived} linktxt="Archived" />
         <SideNavItem link="/employees" img={archived} linktxt="Team Up" />
       </Nav>
     );

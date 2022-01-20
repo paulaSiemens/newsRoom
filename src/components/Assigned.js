@@ -30,20 +30,16 @@ export default function Assigned() {
                     alt="illustration expressing the idea"
                   />
                   <br />
-                  Assigned to: <b>{assignment.get("userId").get("username")}</b>
                   <br />
-                  <Form>
-                    <Button
-                      onClick={(e) => {
-                        e.preventDefault();
-                        Db.handleSubmitted(assignment, forceUpdate);
-                      }}
-                      variant="primary"
-                      type="submit"
-                    >
-                      Submit
-                    </Button>
-                  </Form>{" "}
+                  {assignment.get("ideaId").get("description")}
+                  <br />
+                  <br />
+                  Owner: <b>{assignment.get("userId").get("username")}</b>
+                  <br />
+                  <b>Date Assigned:</b>{" "}
+                  <i>{" " + assignment.get("updatedAt")}</i>
+                  <br />
+                  <br />
                 </Accordion.Body>
               </Accordion.Item>
             </>
@@ -72,8 +68,13 @@ export default function Assigned() {
                       alt="illustration expressing the idea"
                     />
                     <br />
-                    Assigned to:{" "}
-                    <b>{assignment.get("userId").get("username")}</b>
+                    <br />
+                    {assignment.get("ideaId").get("description")}
+                    <br />
+                    <br />
+                    <b>Date Assigned:</b>{" "}
+                    <i>{" " + assignment.get("updatedAt")}</i>
+                    <br />
                     <br />
                     <Form>
                       <Button

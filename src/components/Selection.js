@@ -32,7 +32,13 @@ export default function Selection() {
                   alt="illustration expressing the idea"
                 />
                 <br />
+                <br />
                 {idea.get("description")}
+                <br />
+                <br />
+                <b>Date Created:</b> <i>{" " + idea.get("updatedAt")}</i>
+                <br />
+                <br />
                 <Form>
                   <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
