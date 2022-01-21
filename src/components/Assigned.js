@@ -82,7 +82,7 @@ export default function Assigned() {
                           className="mb-3"
                           controlId="formBasicUsername"
                         >
-                          <Form.Label>Title</Form.Label>
+                          <Form.Label>Article title</Form.Label>
                           <Form.Control
                             type="text"
                             onChange={(e) => setTitle(e.target.value)}
@@ -92,11 +92,11 @@ export default function Assigned() {
                           className="mb-3"
                           controlId="formBasicPassword"
                         >
-                          <Form.Label>Your idea</Form.Label>
+                          <Form.Label>Your article</Form.Label>
                           <Form.Control
                             type="text"
                             onChange={(e) => setDescription(e.target.value)}
-                            placeholder="Start typing your idea here"
+                            placeholder="Insert your article here"
                           />
                         </Form.Group>
                         <Button
@@ -114,7 +114,7 @@ export default function Assigned() {
                           variant="primary"
                           type="submit"
                         >
-                          Submit idea
+                          Submit article
                         </Button>
                       </Form>
                     </Form>{" "}
