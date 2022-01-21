@@ -6,6 +6,11 @@ export default function Assigned() {
   const [assignments, setAssignments] = useState();
   const [submitted, forceUpdate] = useReducer((x) => x + 1, 0);
 
+  function getImage(assignment) {
+    const image = assignment.get("ideaId").get("image");
+    return image;
+  }
+
   useEffect(() => {
     Db.getAssigned(setAssignments);
   }, [submitted]);
@@ -26,7 +31,9 @@ export default function Assigned() {
                 <Accordion.Body>
                   <img
                     className="acc-img"
-                    src={assignment.get("ideaId").get("image").url()}
+                    src={
+                      getImage(assignment) ? image.url() : none / placeholder
+                    }
                     alt="illustration expressing the idea"
                   />
                   <br />
