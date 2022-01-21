@@ -6,24 +6,11 @@ import { useNavigate } from "react-router";
 export default function SubmitIdea() {
   const [title, setTitle] = useState();
   const [description, setDescription] = useState();
-  const [imageName, setImageName] = useState();
-  const [imageData, setImageData] = useState();
-  const navigate = useNavigate();
 
   return (
     <>
       <Form className="cont--submitIdea">
         {/* title and idea forms are mostly the same - should be refactored to avoid duplicating code  */}
-        <Form.Group className="mb-3" controlId="formBasicImage">
-          <Form.Label>Image</Form.Label>
-          <Form.Control
-            type="file"
-            onChange={(e) => {
-              setImageName(e.target.files[0].name);
-              setImageData(e.target.files[0]);
-            }}
-          />
-        </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicUsername">
           <Form.Label>Title</Form.Label>
           <Form.Control
@@ -42,7 +29,7 @@ export default function SubmitIdea() {
         <Button
           onClick={(e) => {
             e.preventDefault();
-            Db.handleIdea(imageName, imageData, title, description, navigate);
+            Db.handleIdea(title, description);
           }}
           variant="primary"
           type="submit"

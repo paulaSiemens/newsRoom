@@ -26,13 +26,6 @@ export default function Selection() {
                 <b>{idea.get("title")}</b>
               </Accordion.Header>
               <Accordion.Body>
-                <img
-                  className="acc-img"
-                  src={idea.get("image").url()}
-                  alt="illustration expressing the idea"
-                />
-                <br />
-                <br />
                 {idea.get("description")}
                 <br />
                 <br />

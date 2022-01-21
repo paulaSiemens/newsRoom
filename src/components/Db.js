@@ -77,12 +77,24 @@ export function handleAssigned(userEmail, ideaId, callBack) {
   });
 }
 
-export function handleSubmitted(assignment, callBack) {
+export function handleSubmitted(
+  imageName,
+  imageData,
+  title,
+  description,
+  assignment,
+  callBack
+) {
   const idea = assignment.get("ideaId");
+  const image = new Parse.File(imageName, imageData);
+  image.name = title;
+  idea.set("image", image);
+  idea.set("title", title);
+  idea.set("description", description);
   try {
     idea.set("status", "Submitted").save();
     assignment.destroy().then((submittedIdea) => {
-      alert('You submitted "' + idea.get("title") + '"');
+      alert('You submitted "' + title + '"');
       callBack();
     });
   } catch (error) {
@@ -141,19 +153,15 @@ export function handleSignupAttempt(email, password, role, callBack) {
   }
 }
 
-export function handleIdea(imageName, imageData, title, description, callBack) {
+export function handleIdea(title, description) {
   const Idea = Parse.Object.extend("Idea");
   const newIdea = new Idea();
-  const image = new Parse.File(imageName, imageData);
   newIdea.set("title", title);
   newIdea.set("description", description);
   newIdea.set("user", Parse.User.current());
-  image.name = title;
-  newIdea.set("image", image);
   try {
     newIdea.save().then((ideaSubmitted) => {
       alert('You submitted "' + title + '" as an article suggestion');
-      callBack("/selection");
       window.location.reload(false);
     });
   } catch (error) {
