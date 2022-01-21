@@ -1,5 +1,17 @@
-.flex-column{
-    width: 200px;
+.navbar-container{
+    width: 367px;
     background-color: #E6E7E9;
     height: 100%;
+}
+
+.navbar-link{
+    width: 100%;
+    height: 96px;
+    color: #002B99;
+    margin: 10px;
+}
+
+.navbar-img{
+    width: 30px;
+    height: 30px;
 }

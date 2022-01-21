@@ -43,7 +43,7 @@ export default function Assigned() {
                     >
                       Submit
                     </Button>
-                  </Form>{" "}
+                  </Form>
                 </Accordion.Body>
               </Accordion.Item>
             </>
@@ -72,7 +72,7 @@ export default function Assigned() {
                       alt="illustration expressing the idea"
                     />
                     <br />
-                    Assigned to:{" "}
+                    Assigned to:
                     <b>{assignment.get("userId").get("username")}</b>
                     <br />
                     <Form>
@@ -86,7 +86,7 @@ export default function Assigned() {
                       >
                         Submit
                       </Button>
-                    </Form>{" "}
+                    </Form>
                   </Accordion.Body>
                 </Accordion.Item>
               </>
