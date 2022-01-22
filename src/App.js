@@ -1,5 +1,5 @@
 import Header from "./components/Header";
-import SideNav from "./components/SideNav";
+import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
@@ -38,7 +38,7 @@ function App() {
             element={
               Db.isLoggedIn() ? (
                 <div className="mainContainer">
-                  <SideNav />
+                  <Navbar />
                   <SubmitIdea />
                 </div>
               ) : (
@@ -51,7 +51,7 @@ function App() {
             element={
               Db.isLoggedIn() ? (
                 <div className="mainContainer">
-                  <SideNav />
+                  <Navbar />
                   <Unassigned />
                 </div>
               ) : (
@@ -64,7 +64,7 @@ function App() {
             element={
               Db.isLoggedIn() ? (
                 <div className="mainContainer">
-                  <SideNav />
+                  <Navbar />
                   <Assigned />
                 </div>
               ) : (
@@ -77,7 +77,7 @@ function App() {
             element={
               Db.isLoggedIn() ? (
                 <div className="mainContainer">
-                  <SideNav />
+                  <Navbar />
                   <Submitted />
                 </div>
               ) : (
@@ -90,7 +90,7 @@ function App() {
             element={
               Db.isLoggedIn() ? (
                 <div className="mainContainer">
-                  <SideNav />
+                  <Navbar />
                   <Archived />
                 </div>
               ) : (
@@ -103,7 +103,7 @@ function App() {
             element={
               Db.isLoggedIn() ? (
                 <div className="mainContainer">
-                  <SideNav />
+                  <Navbar />
                   <Employees />
                 </div>
               ) : (
