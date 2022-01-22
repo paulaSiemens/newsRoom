@@ -1,4 +1,3 @@
-import "./SideNav.css";
 import addIdea from "../images/icon-add.png";
 import assigned from "../images/icon-assigned.png";
 import unassigned from "../images/icon-unassigned.png";
@@ -11,7 +10,6 @@ import Db from "./Db";
 
 import React from "react";
 
-/*TODO: basic styling for pages */
 /*FIXME: code dublication - move to seperate component + props */
 
 export default function SideNav() {
@@ -42,6 +40,7 @@ export default function SideNav() {
           <img className="navbar-img--wide" src={employees} />
           Employees
         </a>
+        <div className="navbar-filler"></div>
       </nav>
     );
   } else {
@@ -67,6 +66,7 @@ export default function SideNav() {
           <img className="navbar-img--wide" src={teamUp} />
           Team Up
         </a>
+        <div className="navbar-filler"></div>
       </nav>
     );
   }

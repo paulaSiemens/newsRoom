@@ -1,0 +1,172 @@
+
+/* --- APP  --- */
+
+.MainContainer {
+    display: flex;
+    height: 100%;
+}
+
+.acc-img {
+    max-width: 50%;
+}
+
+.cont--submitIdea{
+    width: 600px;
+    height: max-content;
+    margin: 15% auto 0px auto;
+}
+
+.form-label {
+    color: black;
+}
+
+.footer{
+    color: white;
+}
+
+.footer > p{
+    padding: 10px;
+    margin: 0 auto;
+}
+
+/* --- HEADER  --- */
+/*FIXME: BRAND img not always centered on navbar (boostrap bugfixing)*/
+
+.navbar-primary{
+    background-color: #0045F6;
+}
+
+.navbar-brand{
+    width: max-content;
+}
+
+.navbar-brand > img {
+    padding: 5px;
+    width: max-content;
+}
+
+.cont--icons {
+    display: flex;
+    width: max-content;
+    height: max-content;
+    margin-left: auto;
+    align-items: center;
+}
+
+.icon {
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
+
+/* --- NAVBAR --- */
+/*FIXME: employee page navbar width changes*/
+
+.navbar-container{
+    width: 300px;
+    background-color: #E6E7E9;
+    height: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+.navbar-link{
+    width: 100%;
+    height: 90px;
+    color: #002B99;
+    text-align: center;
+    padding-top: 20px; /*FIXME: vertical centering*/
+}
+
+.navbar-link:hover{
+    background-color: #f1f1f1;
+}
+
+.navbar-filler{
+    width: 100%;
+    height: 100%;
+} /*FIXME: re-watch css grid tutorial*/
+
+.navbar-img{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
+.navbar-img--wide{
+    width: 40px;
+    height: 30px;
+    margin: 10px;
+}
+/* --- WELCOMEPAGE --- */
+
+.canvas{
+    background-color: #5C88FA;
+    border: 1px solid #5C88FA;
+}
+/* does not reach edge if no border? */
+
+.cont--login{
+    width: 600px;
+    height: max-content;
+    margin: 15% auto;
+    color: white;
+}
+
+.cont--start{
+    width: 600px;
+    height: max-content;
+    margin: 15% auto;
+    color: white;
+}
+
+.cont--start > h1 {
+    margin: 5% auto;
+    width: max-content;
+    height: max-content;
+    font-size: 68px;
+    font-family: 'roboto', sans-serif;
+    color: white;
+}
+
+.cont--start > img {
+    width: max-content;
+    height: max-content;
+    margin: 5% 33%;
+}
+
+/* .cont--btn-start{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin: 40px;
+}
+
+.cont--btn-start > button {
+    width: 150px;
+    height: 150px;
+    border: hidden;
+    border-radius: 100%;
+    background-color: #A4BDFF;
+    color: white;
+    margin: 20px;
+} */
+
+/* .cont--logo{
+    margin: 20% auto;
+    padding: 20px 30px;
+    width: max-content;
+    background-color: #0045F6;
+    border: 5px solid white;
+} */
+
+.form-label{
+    color: white;
+}
+
+/* --- PAGES  --- */
+
