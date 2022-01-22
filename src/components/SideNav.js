@@ -11,7 +11,6 @@ import Db from "./Db";
 
 import React from "react";
 
-/*TODO: finish navbar */
 /*TODO: basic styling for pages */
 /*FIXME: code dublication - move to seperate component + props */
 
@@ -23,7 +22,7 @@ export default function SideNav() {
           <img className="navbar-img" src={assigned} />
           Assigned
         </a>
-        <a className="navbar-link" href="/selected">
+        <a className="navbar-link" href="/unassigned">
           <img className="navbar-img" src={unassigned} />
           Unassigned
         </a>

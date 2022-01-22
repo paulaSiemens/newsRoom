@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import SubmitIdea from "./components/SubmitIdea";
-import Selection from "./components/Selection";
+import Unassigned from "./components/Unassigned";
 import Assigned from "./components/Assigned";
 import Submitted from "./components/Submitted";
 import Archived from "./components/Archived";
@@ -47,12 +47,12 @@ function App() {
             }
           />
           <Route
-            path="/selection"
+            path="/unassigned"
             element={
               Db.isLoggedIn() ? (
                 <div className="mainContainer">
                   <SideNav />
-                  <Selection />
+                  <Unassigned />
                 </div>
               ) : (
                 <Navigate to="/login" />
