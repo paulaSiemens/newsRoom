@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Accordion } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 import Db from "./Db";
 
 export default function Submitted() {
@@ -16,48 +16,60 @@ export default function Submitted() {
   if (Db.getUserRole() === "Editor") {
     return (
       <>
-        <Accordion defaultActiveKey="0">
-          {users.map((user, i) => (
-            <>
-              <Accordion.Item eventKey={i}>
-                <Accordion.Header>
-                  <b>{user.get("username")}</b>
-                </Accordion.Header>
-                <Accordion.Body>
-                  Role:
-                  <b>{" " + user.get("role")}</b>
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Employee ID</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Availability</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map((user, i) => (
+              <tr>
+                <th>{user.id}</th>
+                <th>{user.get("username")}</th>
+
+                <th>
+                  {" " + user.get("role")}
                   <br />
-                  Availability:
-                  <b>{" " + user.get("Availability")}</b>
+                </th>
+                <th>
+                  {" " + user.get("Availability")}
                   <br />
-                </Accordion.Body>
-              </Accordion.Item>
-            </>
-          ))}
-        </Accordion>
+                </th>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
       </>
     );
   } else {
     return (
       <>
-        <Accordion defaultActiveKey="0">
-          {users
-            .filter((user) => user.get("Availability") === "Available")
-            .map((user, i) => (
-              <>
-                <Accordion.Item eventKey={i}>
-                  <Accordion.Header>
-                    <b>{user.get("username")}</b>
-                  </Accordion.Header>
-                  <Accordion.Body>
-                    Role:
-                    <b>{" " + user.get("role")}</b>
-                    <br />
-                  </Accordion.Body>
-                </Accordion.Item>
-              </>
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Employee ID</th>
+              <th>Email</th>
+              <th>Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map((user, i) => (
+              <tr>
+                <th>{user.id}</th>
+                <th>{user.get("username")}</th>
+
+                <th>
+                  {" " + user.get("role")}
+                  <br />
+                </th>
+              </tr>
             ))}
-        </Accordion>
+          </tbody>
+        </Table>
       </>
     );
   }
