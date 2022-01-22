@@ -3,7 +3,6 @@ import { Accordion, Form, Button } from "react-bootstrap";
 import Db from "./Db";
 import { useNavigate } from "react-router";
 
-
 export default function Assigned() {
   const [assignments, setAssignments] = useState();
   const [title, setTitle] = useState();
@@ -11,6 +10,11 @@ export default function Assigned() {
   const [imageName, setImageName] = useState();
   const [imageData, setImageData] = useState();
   const [submitted, forceUpdate] = useReducer((x) => x + 1, 0);
+
+  function getImage(assignment) {
+    const image = assignment.get("ideaId").get("image");
+    return image;
+  }
 
   useEffect(() => {
     Db.getAssigned(setAssignments);
