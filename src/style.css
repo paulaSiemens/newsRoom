@@ -4,6 +4,7 @@
 .MainContainer {
     display: flex;
     height: 100%;
+    font-family: 'roboto', sans-serif;
 }
 
 .acc-img {
@@ -140,34 +141,49 @@
     margin: 5% 33%;
 }
 
-/* .cont--btn-start{
-    display: flex;
-    align-self: center;
-    justify-content: center;
-    margin: 40px;
-}
-
-.cont--btn-start > button {
-    width: 150px;
-    height: 150px;
-    border: hidden;
-    border-radius: 100%;
-    background-color: #A4BDFF;
-    color: white;
-    margin: 20px;
-} */
-
-/* .cont--logo{
-    margin: 20% auto;
-    padding: 20px 30px;
-    width: max-content;
-    background-color: #0045F6;
-    border: 5px solid white;
-} */
-
 .form-label{
     color: white;
 }
 
 /* --- PAGES  --- */
 
+.acc-container{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px; 
+    width: 70%;
+    height: 70%;
+}
+
+.acc-container > h1{
+    font-family: 'roboto', sans-serif;
+    font-size: 30px;
+}
+
+.acc-container > h1 > img{
+    margin-right: 30px;
+}
+
+.acc-topColumn{
+    width: 100%;
+    height: 60px;
+    margin-bottom: 10px;
+    background-color: #0045F6;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.acc-topColumn > p{
+    margin: auto;
+}
+
+.searchbar-container{
+    border: hidden;
+    background-color: #E6E7E9;
+    border-radius: 5px;
+    margin: 50px;
+    height: 40px;
+    padding: 5px;
+    width: 600px;
+}

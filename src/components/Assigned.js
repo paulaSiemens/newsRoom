@@ -2,6 +2,7 @@ import { useEffect, useState, useReducer } from "react";
 import { Accordion, Form, Button } from "react-bootstrap";
 import Db from "./Db";
 import { useNavigate } from "react-router";
+import iconAssigned from "../images/icon-assigned.png";
 
 export default function Assigned() {
   const [assignments, setAssignments] = useState();
@@ -25,29 +26,39 @@ export default function Assigned() {
   }
   if (Db.getUserRole() === "Editor") {
     return (
-      <>
-        <Accordion defaultActiveKey="0">
-          {assignments.map((assignment, i) => (
-            <>
-              <Accordion.Item eventKey={i}>
-                <Accordion.Header>
-                  <b>{assignment.get("ideaId").get("title")}</b>
-                </Accordion.Header>
-                <Accordion.Body>
-                  {assignment.get("ideaId").get("description")}
-                  <br />
-                  <br />
-                  Owner: <b>{assignment.get("userId").get("username")}</b>
-                  <br />
-                  <b>Date Assigned:</b>{" "}
-                  <i>{" " + assignment.get("updatedAt")}</i>
-                  <br />
-                  <br />
-                </Accordion.Body>
-              </Accordion.Item>
-            </>
-          ))}
-        </Accordion>
+      <> {/* TODO: discuss with group */}
+        <div className="acc-container">
+          <h1><img src={iconAssigned} />Assigned</h1>
+          <div className="searchbar-container">search bar placeholder</div>
+          <div className="acc-topColumn"> {/* TODO: make seperate component? */}
+            <p>Size</p>
+            <p>Title</p>
+            <p>Status</p>
+            <p>Deadline</p>
+          </div>
+          <Accordion defaultActiveKey="0">
+            {assignments.map((assignment, i) => (
+              <>
+                <Accordion.Item eventKey={i}>
+                  <Accordion.Header >
+                    <b>{assignment.get("ideaId").get("title")}</b>
+                  </Accordion.Header>
+                  <Accordion.Body>
+                    {assignment.get("ideaId").get("description")}
+                    <br />
+                    <br />
+                    Owner: <b>{assignment.get("userId").get("username")}</b>
+                    <br />
+                    <b>Date Assigned:</b>{" "}
+                    <i>{" " + assignment.get("updatedAt")}</i>
+                    <br />
+                    <br />
+                  </Accordion.Body>
+                </Accordion.Item>
+              </>
+            ))}
+          </Accordion>
+        </div>
       </>
     );
   } else {
