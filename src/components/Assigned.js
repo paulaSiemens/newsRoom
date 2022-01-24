@@ -3,7 +3,11 @@ import { Accordion, Form, Button } from "react-bootstrap";
 import Db from "./Db";
 import { useNavigate } from "react-router";
 import iconAssigned from "../images/icon-assigned.png";
-
+import iconSearch from "../images/icon-search.png";
+import iconArtSmall from "../images/icon-articlesize-small.png";
+import iconArtMedium from "../images/icon-articlesize-medium.png";
+import iconArtLarge from "../images/icon-articlesize-large.png";
+import iconArtALL from "../images/icon-articlesize-ALL.png";
 export default function Assigned() {
   const [assignments, setAssignments] = useState();
   const [title, setTitle] = useState();
@@ -27,14 +31,26 @@ export default function Assigned() {
   if (Db.getUserRole() === "Editor") {
     return (
       <> {/* TODO: discuss with group */}
+          {/* TODO: replace with grid */}
         <div className="acc-container">
           <h1><img src={iconAssigned} />Assigned</h1>
-          <div className="searchbar-container">search bar placeholder</div>
-          <div className="acc-topColumn"> {/* TODO: make seperate component? */}
-            <p>Size</p>
+          <div className="searchbar-container">
+            <div className="searchbar-placeholder">
+            <img src={iconSearch} />
+            searchbar placeholder  
+            </div>
+            <div className="icon-container">
+              <img src={iconArtSmall} />
+              <img src={iconArtMedium} />
+              <img src={iconArtLarge} />
+              <img src={iconArtALL} />
+            </div>
+          </div>
+          <div className="acc-topColumn"> {/* TODO: make seperate component, and add column names as array rendered props */}
             <p>Title</p>
-            <p>Status</p>
             <p>Deadline</p>
+            <p>Status</p>
+            <p>Size</p>
           </div>
           <Accordion defaultActiveKey="0">
             {assignments.map((assignment, i) => (
