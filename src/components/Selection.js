@@ -6,6 +6,7 @@ export default function Selection() {
   const [ideas, setIdeas] = useState();
   const [ideaId, setIdeaId] = useState();
   const [userEmail, setUserEmail] = useState();
+  const [deadline, setDeadline] = useState();
   const [assigned, forceUpdate] = useReducer((x) => x + 1, 0);
 
   useEffect(() => {
@@ -44,10 +45,24 @@ export default function Selection() {
                       placeholder="Enter email"
                     />
                   </Form.Group>
+                  <Form.Group className="mb-3">
+                    <Form.Label>Deadline</Form.Label>
+                    <Form.Control
+                      type="date"
+                      onChange={(e) => {
+                        setDeadline(e.target.value);
+                      }}
+                    />
+                  </Form.Group>
                   <Button
                     onClick={(e) => {
                       e.preventDefault();
-                      Db.handleAssigned(userEmail, ideaId, forceUpdate);
+                      Db.handleAssigned(
+                        userEmail,
+                        ideaId,
+                        deadline,
+                        forceUpdate
+                      );
                     }}
                     variant="primary"
                     type="submit"

@@ -18,6 +18,7 @@ export default function Assigned() {
   if (!assignments) {
     return <p>Loading...</p>;
   }
+
   if (Db.getUserRole() === "Editor") {
     return (
       <>
@@ -28,6 +29,8 @@ export default function Assigned() {
                 <Accordion.Header>
                   <b>{assignment.get("ideaId").get("title")}</b>
                 </Accordion.Header>
+                Deadline:
+                <i>{" " + assignment.get("deadline")}</i>
                 <Accordion.Body>
                   {assignment.get("ideaId").get("description")}
                   <br />
@@ -59,14 +62,21 @@ export default function Assigned() {
                   <Accordion.Header>
                     <b>{assignment.get("ideaId").get("title")}</b>
                   </Accordion.Header>
+                  Deadline:
+                  <i>{" " + assignment.get("deadline")}</i>
                   <Accordion.Body>
                     {assignment.get("ideaId").get("description")}
                     <br />
                     <br />
                     <b>Date Assigned:</b>{" "}
                     <i>{" " + assignment.get("updatedAt")}</i>
+                    <br />
+                    <br />
                     <Form>
                       <Form className="cont--submitIdea">
+                        <b>Submit article</b>
+                        <br />
+                        <br />
                         {/* title and idea forms are mostly the same - should be refactored to avoid duplicating code  */}
                         <Form.Group className="mb-3" controlId="formBasicImage">
                           <Form.Label>Image</Form.Label>
@@ -114,8 +124,9 @@ export default function Assigned() {
                           variant="primary"
                           type="submit"
                         >
-                          Submit article
+                          Submit
                         </Button>
+                        <br />
                       </Form>
                     </Form>{" "}
                   </Accordion.Body>

@@ -16,6 +16,7 @@ export function getAssigned(callBack) {
   AssignedQuery.equalTo("status", "Assigned");
   AssignedQuery.include("ideaId");
   AssignedQuery.include("userId");
+  AssignedQuery.ascending("deadline");
   AssignedQuery.find().then((assigned) => {
     callBack(assigned);
   });
@@ -49,7 +50,7 @@ export function getUsers(callBack) {
   });
 }
 
-export function handleAssigned(userEmail, ideaId, callBack) {
+export function handleAssigned(userEmail, ideaId, deadline, callBack) {
   const Assigned = Parse.Object.extend("Assigned");
   const newAssigned = new Assigned();
   const UserQuery = new Parse.Query(Parse.User);
@@ -58,6 +59,7 @@ export function handleAssigned(userEmail, ideaId, callBack) {
     console.log(user[0].id);
     newAssigned.set("userId", user[0]);
     newAssigned.set("ideaId", ideaId);
+    newAssigned.set("deadline", deadline);
     ideaId.set("status", "Assigned");
     ideaId.set("owner", user[0]);
     try {
