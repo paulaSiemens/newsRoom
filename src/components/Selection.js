@@ -4,7 +4,6 @@ import Db from "./Db";
 
 export default function Selection() {
   const [ideas, setIdeas] = useState();
-  const [ideaId, setIdeaId] = useState();
   const [userEmail, setUserEmail] = useState();
   const [deadline, setDeadline] = useState();
   const [assigned, forceUpdate] = useReducer((x) => x + 1, 0);
@@ -40,7 +39,6 @@ export default function Selection() {
                       type="email"
                       onChange={(e) => {
                         setUserEmail(e.target.value);
-                        setIdeaId(idea);
                       }}
                       placeholder="Enter email"
                     />
@@ -57,12 +55,7 @@ export default function Selection() {
                   <Button
                     onClick={(e) => {
                       e.preventDefault();
-                      Db.handleAssigned(
-                        userEmail,
-                        ideaId,
-                        deadline,
-                        forceUpdate
-                      );
+                      Db.handleAssigned(userEmail, idea, deadline, forceUpdate);
                     }}
                     variant="primary"
                     type="submit"
