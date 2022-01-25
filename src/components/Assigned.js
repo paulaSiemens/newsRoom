@@ -59,6 +59,8 @@ export default function Assigned() {
                   <Accordion.Header >
                     <b>{assignment.get("ideaId").get("title")}</b>
                   </Accordion.Header>
+                    Deadline:
+                    <i>{" " + assignment.get("deadline")}</i>
                   <Accordion.Body>
                     {assignment.get("ideaId").get("description")}
                     <br />
@@ -91,6 +93,8 @@ export default function Assigned() {
                   <Accordion.Header>
                     <b>{assignment.get("ideaId").get("title")}</b>
                   </Accordion.Header>
+                    Deadline:
+                    <i>{" " + assignment.get("deadline")}</i>
                   <Accordion.Body>
                     {assignment.get("ideaId").get("description")}
                     <br />
