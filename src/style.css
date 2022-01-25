@@ -1,0 +1,210 @@
+
+/* --- APP  --- */
+
+.MainContainer {
+    display: flex;
+    height: 100%;
+    font-family: 'roboto', sans-serif;
+}
+
+.acc-img {
+    max-width: 50%;
+}
+
+.cont--submitIdea{
+    width: 600px;
+    height: max-content;
+    margin: 15% auto 0px auto;
+}
+
+.form-label {
+    color: black;
+}
+
+.footer{
+    color: white;
+}
+
+.footer > p{
+    padding: 10px;
+    margin: 0 auto;
+}
+
+/* --- HEADER  --- */
+/*FIXME: BRAND img not always centered on navbar (boostrap bugfixing)*/
+
+.navbar-primary{
+    background-color: #0045F6;
+}
+
+.navbar-brand{
+    width: max-content;
+}
+
+.navbar-brand > img {
+    padding: 5px;
+    width: max-content;
+}
+
+.cont--icons {
+    display: flex;
+    width: max-content;
+    height: max-content;
+    margin-left: auto;
+    align-items: center;
+}
+
+.icon {
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
+
+/* --- NAVBAR --- */
+/*FIXME: employee page navbar width changes*/
+/*TODO: linktext styling*/
+
+.navbar-container{
+    width: 300px;
+    background-color: #E6E7E9;
+    height: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+.navbar-link{
+    width: 100%;
+    height: 90px;
+    color: #002B99;
+    text-align: center;
+    padding-top: 20px; /*FIXME: vertical centering*/
+}
+
+.navbar-link:hover{
+    background-color: #f1f1f1;
+}
+
+.navbar-filler{
+    width: 100%;
+    height: 100%;
+} /*FIXME: re-watch css grid tutorial*/
+
+.navbar-img{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
+.navbar-img--wide{
+    width: 40px;
+    height: 30px;
+    margin: 10px;
+}
+/* --- WELCOMEPAGE --- */
+
+.canvas{
+    background-color: #5C88FA;
+    border: 1px solid #5C88FA;
+}
+/* does not reach edge if no border? */
+
+.cont--login{
+    width: 600px;
+    height: max-content;
+    margin: 15% auto;
+    color: white;
+}
+
+.cont--start{
+    width: 600px;
+    height: max-content;
+    margin: 15% auto;
+    color: white;
+}
+
+.cont--start > h1 {
+    margin: 5% auto;
+    width: max-content;
+    height: max-content;
+    font-size: 68px;
+    font-family: 'roboto', sans-serif;
+    color: white;
+}
+
+.cont--start > img {
+    width: max-content;
+    height: max-content;
+    margin: 5% 33%;
+}
+
+.form-label{
+    color: white;
+}
+
+/* --- PAGES  --- */
+
+.acc-container{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    width: 70%;
+    height: 70%;
+}
+
+.acc-container > h1{
+    font-family: 'roboto', sans-serif;
+    font-size: 30px;
+}
+
+.acc-container > h1 > img{
+    margin-right: 30px;
+}
+
+.acc-topColumn{
+    width: 100%;
+    height: 60px;
+    margin-bottom: 10px;
+    background-color: #0045F6;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.acc-topColumn > p{
+    margin: auto;
+}
+
+.searchbar-placeholder{
+    border: hidden;
+    background-color: #E6E7E9;
+    border-radius: 5px;
+    margin: 50px;
+    height: 40px;
+    padding: 5px;
+    width: 600px;
+    color: grey;
+}
+
+.searchbar-placeholder > img {
+    padding: 3px;
+}
+
+.searchbar-container{
+    display: flex;
+    align-items: center;
+}
+
+.icon-container{
+    display: flex;
+    margin-left: auto;
+    margin-right: 50px;
+    height: fit-content;
+}
+
+.icon-container > img {
+    margin: 5px;
+}
