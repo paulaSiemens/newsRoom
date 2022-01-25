@@ -33,12 +33,12 @@ export default function Assigned() {
     return (
       <> {/* TODO: discuss with group */}
           {/* TODO: replace with grid */}
-        <div className="topPage-container">
+        <div className="container-topRow" >
           <h1><img src={iconAssigned} />Assigned</h1>
-          <div className="searchbar-container">
-            <div className="searchbar-placeholder">
+          <div className="container-searchRow">
+            <div className="searchbar">
             <img src={iconSearch} />
-            searchbar placeholder  
+            search ...  
             </div>
             <div className="icon-container">
               <img src={iconArtSmall} />
@@ -47,21 +47,20 @@ export default function Assigned() {
               <img src={iconArtALL} />
             </div>
           </div>
-          <div className="acc-topColumn"> {/* TODO: make seperate component, and add column names as array rendered props */}
+          <div className="accTable-header">
             <p>Title</p>
-            <p>Deadline</p>
           </div>
           <Accordion defaultActiveKey="0">
             {assignments.map((assignment, i) => (
               <>
                 <Accordion.Item eventKey={i}>
-                  <Accordion.Header className="acc-header">
+                  <Accordion.Header>
                     <b>{assignment.get("ideaId").get("title")}</b>
-                    <p className="acc-deadline">
-                      Deadline:
+                  </Accordion.Header>
+                    <p className ="deadline">
+                      <b>Deadline:</b>
                       <i>{" " + assignment.get("deadline")}</i>
                     </p>
-                  </Accordion.Header>
                   <Accordion.Body>
                     {assignment.get("ideaId").get("description")}
                     <br />

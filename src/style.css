@@ -63,7 +63,6 @@
 
 /* --- NAVBAR --- */
 /*FIXME: employee page navbar width changes*/
-/*TODO: linktext styling*/
 
 .navbar-container{
     width: 300px;
@@ -110,7 +109,6 @@
     background-color: #5C88FA;
     border: 1px solid #5C88FA;
 }
-/* does not reach edge if no border? */
 
 .cont--login{
     width: 600px;
@@ -147,7 +145,7 @@
 
 /* --- PAGES  --- */
 
-.acc-container{
+.container-topRow{
     margin-left: auto;
     margin-right: auto;
     margin-top: 100px;
@@ -155,30 +153,22 @@
     height: 70%;
 }
 
-.acc-container > h1{
+.container-topRow > h1{
     font-family: 'roboto', sans-serif;
     font-size: 30px;
+    margin-left: 50px;
 }
 
-.acc-container > h1 > img{
+.container-topRow > h1 > img{
     margin-right: 30px;
 }
 
-.acc-topColumn{
-    width: 100%;
-    height: 60px;
-    margin-bottom: 10px;
-    background-color: #0045F6;
-    color: white;
+.container-searchRow{
     display: flex;
-    justify-content: center;
+    align-items: center;
 }
 
-.acc-topColumn > p{
-    margin: auto;
-}
-
-.searchbar-placeholder{
+.searchbar{
     border: hidden;
     background-color: #E6E7E9;
     border-radius: 5px;
@@ -189,13 +179,8 @@
     color: grey;
 }
 
-.searchbar-placeholder > img {
+.searchbar > img {
     padding: 3px;
-}
-
-.searchbar-container{
-    display: flex;
-    align-items: center;
 }
 
 .icon-container{
@@ -207,4 +192,21 @@
 
 .icon-container > img {
     margin: 5px;
+}
+
+.accTable-header{
+    width: 100%;
+    height: 60px;
+    margin-bottom: 10px;
+    background-color: #0045F6;
+    color: white;
+}
+
+.accTable-header > p{
+    margin-left: 21px;
+    padding-top: 17px;
+}
+
+.deadline{
+    margin-left: 21px;
 }
