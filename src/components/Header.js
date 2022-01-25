@@ -5,7 +5,7 @@ import brand from "../images/logo-brand.png";
 import logout from "../images/icon-logout.png";
 import notif from "../images/icon-notif.png";
 import profile from "../images/icon-profile.png";
-import Db from "./Db";
+import Db, { getUserRole } from "./Db";
 
 export default function Header() {
   const [loggedIn, setLoggedIn] = useState();
@@ -15,6 +15,19 @@ export default function Header() {
     Db.isLoggedInCallBack(setLoggedIn);
     setCurrentTab(window.location.pathname);
   }, []);
+
+  function getIconType(){
+    switch (Db.getUserRole()) {
+      case "Journalist":
+        return "J"
+      case "Photographer":
+        return "P"
+      case "Assistant":
+        return "A"
+      default:
+       return "E"
+    }
+  }
 
   if (!loggedIn) {
     return (
@@ -58,7 +71,7 @@ export default function Header() {
               <img className="icon" src={logout} alt="icon logout"></img>
             </Nav.Link>
             <img className="icon" src={notif} alt="icon notifications"></img>
-            <img className="icon" src={profile} alt="icon profile"></img>
+            <div className="icon-profile" >{getIconType()}</div>
           </div>
         </Container>
       </Navbar>

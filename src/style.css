@@ -1,6 +1,10 @@
 
 /* --- APP  --- */
 
+.App{
+    height: 200%;
+}
+
 .MainContainer {
     display: flex;
     height: 100%;
@@ -19,15 +23,6 @@
 
 .form-label {
     color: black;
-}
-
-.footer{
-    color: white;
-}
-
-.footer > p{
-    padding: 10px;
-    margin: 0 auto;
 }
 
 /* --- HEADER  --- */
@@ -59,6 +54,29 @@
     width: 30px;
     height: 30px;
     margin: 5px;
+}
+
+.icon-profile {
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    background-color: #0045F6;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* --- FOOTER --- */
+
+.footer{
+    color: white;
+}
+
+.footer > p{
+    padding: 10px;
+    margin: 0 auto;
 }
 
 /* --- NAVBAR --- */
@@ -145,21 +163,23 @@
 
 /* --- PAGES  --- */
 
-.container-topRow{
+.container-page{
     margin-left: auto;
     margin-right: auto;
     margin-top: 100px;
+    margin-bottom: 0;
     width: 70%;
-    height: 70%;
+    height: max-content;
+    border: solid orange;
 }
 
-.container-topRow > h1{
+.container-page > h1{
     font-family: 'roboto', sans-serif;
     font-size: 30px;
     margin-left: 50px;
 }
 
-.container-topRow > h1 > img{
+.container-page > h1 > img{
     margin-right: 30px;
 }
 
@@ -205,6 +225,11 @@
 .accTable-header > p{
     margin-left: 21px;
     padding-top: 17px;
+}
+
+.accordion{
+    height: max-content;
+    border: solid blue;
 }
 
 .deadline{

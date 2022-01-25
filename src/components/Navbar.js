@@ -28,10 +28,10 @@ export default function SideNav() {
           <img className="navbar-img" src={submitted} />
           Submitted
         </a>
-        <a className="navbar-link" href="/archived">
+{/*         <a className="navbar-link" href="/archived">
           <img className="navbar-img" src={ideas} />
           Ideas
-        </a>
+        </a> */}
         <a className="navbar-link" href="/archived">
           <img className="navbar-img" src={archived} />
           Archived

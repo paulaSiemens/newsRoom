@@ -8,6 +8,7 @@ import iconArtSmall from "../images/icon-articlesize-small.png";
 import iconArtMedium from "../images/icon-articlesize-medium.png";
 import iconArtLarge from "../images/icon-articlesize-large.png";
 import iconArtALL from "../images/icon-articlesize-ALL.png";
+
 export default function Assigned() {
   const [assignments, setAssignments] = useState();
   const [title, setTitle] = useState();
@@ -33,7 +34,7 @@ export default function Assigned() {
     return (
       <> {/* TODO: discuss with group */}
           {/* TODO: replace with grid */}
-        <div className="container-topRow" >
+        <div className="container-page" >
           <h1><img src={iconAssigned} />Assigned</h1>
           <div className="container-searchRow">
             <div className="searchbar">
@@ -50,7 +51,7 @@ export default function Assigned() {
           <div className="accTable-header">
             <p>Title</p>
           </div>
-          <Accordion defaultActiveKey="0">
+          <Accordion className="accordion" defaultActiveKey="0">
             {assignments.map((assignment, i) => (
               <>
                 <Accordion.Item eventKey={i}>
@@ -83,6 +84,23 @@ export default function Assigned() {
     
     return (
       <>
+        <div className="container-page" >
+          <h1><img src={iconAssigned} />Assigned</h1>
+          <div className="container-searchRow">
+            <div className="searchbar">
+            <img src={iconSearch} />
+            search ...  
+            </div>
+            <div className="icon-container">
+              <img src={iconArtSmall} />
+              <img src={iconArtMedium} />
+              <img src={iconArtLarge} />
+              <img src={iconArtALL} />
+            </div>
+          </div>
+          <div className="accTable-header">
+            <p>Title</p>
+          </div>
         <Accordion defaultActiveKey="0">
           {assignments
             .filter(
@@ -166,6 +184,7 @@ export default function Assigned() {
               </>
             ))}
         </Accordion>
+        </div>
       </>
     );
   }

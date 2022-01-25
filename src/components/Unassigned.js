@@ -1,6 +1,12 @@
 import { useEffect, useState, useReducer } from "react";
 import { Accordion, Form, Button } from "react-bootstrap";
 import Db from "./Db";
+import iconUnassigned from "../images/icon-unassigned.png";
+import iconSearch from "../images/icon-search.png";
+import iconArtSmall from "../images/icon-articlesize-small.png";
+import iconArtMedium from "../images/icon-articlesize-medium.png";
+import iconArtLarge from "../images/icon-articlesize-large.png";
+import iconArtALL from "../images/icon-articlesize-ALL.png";
 
 export default function Unassigned() {
   const [ideas, setIdeas] = useState();
@@ -18,6 +24,23 @@ export default function Unassigned() {
 
   return (
     <>
+      <div className="container-page" >
+          <h1><img src={iconUnassigned} />Unassigned</h1>
+          <div className="container-searchRow">
+            <div className="searchbar">
+            <img src={iconSearch} />
+            search ...  
+            </div>
+            <div className="icon-container">
+              <img src={iconArtSmall} />
+              <img src={iconArtMedium} />
+              <img src={iconArtLarge} />
+              <img src={iconArtALL} />
+            </div>
+          </div>
+          <div className="accTable-header">
+            <p>Title</p>
+          </div>
       <Accordion defaultActiveKey="0">
         {ideas.map((idea, i) => (
           <>
@@ -68,6 +91,7 @@ export default function Unassigned() {
           </>
         ))}
       </Accordion>
+      </div>
     </>
   );
 }
