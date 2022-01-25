@@ -31,14 +31,19 @@ export default function Assigned() {
 
   if (Db.getUserRole() === "Editor") {
     return (
-      <> {/* TODO: discuss with group */}
-          {/* TODO: replace with grid */}
+      <>
+        {" "}
+        {/* TODO: discuss with group */}
+        {/* TODO: replace with grid */}
         <div className="topPage-container">
-          <h1><img src={iconAssigned} />Assigned</h1>
+          <h1>
+            <img src={iconAssigned} />
+            Assigned
+          </h1>
           <div className="searchbar-container">
             <div className="searchbar-placeholder">
-            <img src={iconSearch} />
-            searchbar placeholder  
+              <img src={iconSearch} />
+              searchbar placeholder
             </div>
             <div className="icon-container">
               <img src={iconArtSmall} />
@@ -47,7 +52,9 @@ export default function Assigned() {
               <img src={iconArtALL} />
             </div>
           </div>
-          <div className="acc-topColumn"> {/* TODO: make seperate component, and add column names as array rendered props */}
+          <div className="acc-topColumn">
+            {" "}
+            {/* TODO: make seperate component, and add column names as array rendered props */}
             <p>Title</p>
             <p>Deadline</p>
             <p>Status</p>
@@ -83,7 +90,6 @@ export default function Assigned() {
       </>
     );
   } else {
-    
     return (
       <>
         <Accordion defaultActiveKey="0">
@@ -135,11 +141,12 @@ export default function Assigned() {
                         </Form.Group>
                         <Form.Group
                           className="mb-3"
-                          controlId="formBasicPassword"
+                          controlId="exampleForm.ControlTextarea1"
                         >
                           <Form.Label>Your article</Form.Label>
                           <Form.Control
-                            type="text"
+                            as="textarea"
+                            rows={8}
                             onChange={(e) => setDescription(e.target.value)}
                             placeholder="Insert your article here"
                           />

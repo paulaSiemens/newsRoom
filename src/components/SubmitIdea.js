@@ -47,10 +47,11 @@ export default function SubmitIdea() {
             placeholder={title}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
           <Form.Label>Your idea</Form.Label>
           <Form.Control
-            type="text"
+            as="textarea"
+            rows={3}
             onChange={(e) => setDescription(e.target.value)}
             placeholder={description}
           />
