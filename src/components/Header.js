@@ -1,7 +1,6 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { useState } from "react";
 import { useEffect } from "react";
-import "./Header.css";
 import brand from "../images/logo-brand.png";
 import logout from "../images/icon-logout.png";
 import notif from "../images/icon-notif.png";

@@ -2,7 +2,12 @@ import { useEffect, useState, useReducer } from "react";
 import { Accordion, Form, Button } from "react-bootstrap";
 import Db from "./Db";
 import { useNavigate } from "react-router";
-
+import iconAssigned from "../images/icon-assigned.png";
+import iconSearch from "../images/icon-search.png";
+import iconArtSmall from "../images/icon-articlesize-small.png";
+import iconArtMedium from "../images/icon-articlesize-medium.png";
+import iconArtLarge from "../images/icon-articlesize-large.png";
+import iconArtALL from "../images/icon-articlesize-ALL.png";
 export default function Assigned() {
   const [assignments, setAssignments] = useState();
   const [title, setTitle] = useState();
@@ -10,6 +15,11 @@ export default function Assigned() {
   const [imageName, setImageName] = useState();
   const [imageData, setImageData] = useState();
   const [submitted, forceUpdate] = useReducer((x) => x + 1, 0);
+
+  function getImage(assignment) {
+    const image = assignment.get("ideaId").get("image");
+    return image;
+  }
 
   useEffect(() => {
     Db.getAssigned(setAssignments);
@@ -21,31 +31,53 @@ export default function Assigned() {
 
   if (Db.getUserRole() === "Editor") {
     return (
-      <>
-        <Accordion defaultActiveKey="0">
-          {assignments.map((assignment, i) => (
-            <>
-              <Accordion.Item eventKey={i}>
-                <Accordion.Header>
-                  <b>{assignment.get("ideaId").get("title")}</b>
-                </Accordion.Header>
-                Deadline:
-                <i>{" " + assignment.get("deadline")}</i>
-                <Accordion.Body>
-                  {assignment.get("ideaId").get("description")}
-                  <br />
-                  <br />
-                  Owner: <b>{assignment.get("userId").get("username")}</b>
-                  <br />
-                  <b>Date Assigned:</b>{" "}
-                  <i>{" " + assignment.get("updatedAt")}</i>
-                  <br />
-                  <br />
-                </Accordion.Body>
-              </Accordion.Item>
-            </>
-          ))}
-        </Accordion>
+      <> {/* TODO: discuss with group */}
+          {/* TODO: replace with grid */}
+        <div className="acc-container">
+          <h1><img src={iconAssigned} />Assigned</h1>
+          <div className="searchbar-container">
+            <div className="searchbar-placeholder">
+            <img src={iconSearch} />
+            searchbar placeholder  
+            </div>
+            <div className="icon-container">
+              <img src={iconArtSmall} />
+              <img src={iconArtMedium} />
+              <img src={iconArtLarge} />
+              <img src={iconArtALL} />
+            </div>
+          </div>
+          <div className="acc-topColumn"> {/* TODO: make seperate component, and add column names as array rendered props */}
+            <p>Title</p>
+            <p>Deadline</p>
+            <p>Status</p>
+            <p>Size</p>
+          </div>
+          <Accordion defaultActiveKey="0">
+            {assignments.map((assignment, i) => (
+              <>
+                <Accordion.Item eventKey={i}>
+                  <Accordion.Header >
+                    <b>{assignment.get("ideaId").get("title")}</b>
+                  </Accordion.Header>
+                    Deadline:
+                    <i>{" " + assignment.get("deadline")}</i>
+                  <Accordion.Body>
+                    {assignment.get("ideaId").get("description")}
+                    <br />
+                    <br />
+                    Owner: <b>{assignment.get("userId").get("username")}</b>
+                    <br />
+                    <b>Date Assigned:</b>{" "}
+                    <i>{" " + assignment.get("updatedAt")}</i>
+                    <br />
+                    <br />
+                  </Accordion.Body>
+                </Accordion.Item>
+              </>
+            ))}
+          </Accordion>
+        </div>
       </>
     );
   } else {

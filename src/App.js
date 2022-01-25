@@ -1,10 +1,10 @@
 import Header from "./components/Header";
-import SideNav from "./components/SideNav";
+import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import SubmitIdea from "./components/SubmitIdea";
-import Selection from "./components/Selection";
+import Unassigned from "./components/Unassigned";
 import Assigned from "./components/Assigned";
 import Submitted from "./components/Submitted";
 import Archived from "./components/Archived";
@@ -38,7 +38,7 @@ function App() {
             element={
               Db.isLoggedIn() ? (
                 <div className="mainContainer">
-                  <SideNav />
+                  <Navbar />
                   <SubmitIdea />
                 </div>
               ) : (
@@ -47,12 +47,12 @@ function App() {
             }
           />
           <Route
-            path="/selection"
+            path="/unassigned"
             element={
               Db.isLoggedIn() ? (
                 <div className="mainContainer">
-                  <SideNav />
-                  <Selection />
+                  <Navbar />
+                  <Unassigned />
                 </div>
               ) : (
                 <Navigate to="/login" />
@@ -64,7 +64,7 @@ function App() {
             element={
               Db.isLoggedIn() ? (
                 <div className="mainContainer">
-                  <SideNav />
+                  <Navbar />
                   <Assigned />
                 </div>
               ) : (
@@ -77,7 +77,7 @@ function App() {
             element={
               Db.isLoggedIn() ? (
                 <div className="mainContainer">
-                  <SideNav />
+                  <Navbar />
                   <Submitted />
                 </div>
               ) : (
@@ -90,7 +90,7 @@ function App() {
             element={
               Db.isLoggedIn() ? (
                 <div className="mainContainer">
-                  <SideNav />
+                  <Navbar />
                   <Archived />
                 </div>
               ) : (
@@ -103,7 +103,7 @@ function App() {
             element={
               Db.isLoggedIn() ? (
                 <div className="mainContainer">
-                  <SideNav />
+                  <Navbar />
                   <Employees />
                 </div>
               ) : (

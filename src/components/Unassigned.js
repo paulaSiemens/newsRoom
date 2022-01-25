@@ -2,7 +2,7 @@ import { useEffect, useState, useReducer } from "react";
 import { Accordion, Form, Button } from "react-bootstrap";
 import Db from "./Db";
 
-export default function Selection() {
+export default function Unassigned() {
   const [ideas, setIdeas] = useState();
   const [userEmail, setUserEmail] = useState();
   const [deadline, setDeadline] = useState();

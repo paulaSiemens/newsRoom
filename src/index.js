@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import Db from "./components/Db";
-import "./App.css";
+import "./style.css";
 
 Db.connectToServer(
   "cUJSSsUpoHrC4kbYzOHqYfHdMc0Fzz1ZFAF26K6q",
