@@ -50,8 +50,6 @@ export default function Assigned() {
           <div className="acc-topColumn"> {/* TODO: make seperate component, and add column names as array rendered props */}
             <p>Title</p>
             <p>Deadline</p>
-            <p>Status</p>
-            <p>Size</p>
           </div>
           <Accordion defaultActiveKey="0">
             {assignments.map((assignment, i) => (
