@@ -5,9 +5,13 @@ export function getArchived(callBack) {
   const IdeaQuery = new Parse.Query(Idea);
   IdeaQuery.equalTo("status", "Archived");
   IdeaQuery.include("owner");
-  IdeaQuery.find().then((archived) => {
-    callBack(archived);
-  });
+  try {
+    IdeaQuery.find().then((archived) => {
+      callBack(archived);
+    });
+  } catch (error) {
+    alert(error);
+  }
 }
 
 export function getAssigned(callBack) {
@@ -17,18 +21,26 @@ export function getAssigned(callBack) {
   AssignedQuery.include("ideaId");
   AssignedQuery.include("userId");
   AssignedQuery.ascending("deadline");
-  AssignedQuery.find().then((assigned) => {
-    callBack(assigned);
-  });
+  try {
+    AssignedQuery.find().then((assigned) => {
+      callBack(assigned);
+    });
+  } catch (error) {
+    alert(error);
+  }
 }
 
 export function getUnassigned(callBack) {
   const Idea = Parse.Object.extend("Idea");
   const IdeaQuery = new Parse.Query(Idea);
   IdeaQuery.equalTo("status", "Unassigned");
-  IdeaQuery.find().then((unAssigned) => {
-    callBack(unAssigned);
-  });
+  try {
+    IdeaQuery.find().then((unAssigned) => {
+      callBack(unAssigned);
+    });
+  } catch (error) {
+    alert(error);
+  }
 }
 
 export function getSubmitted(callBack) {
@@ -36,18 +48,26 @@ export function getSubmitted(callBack) {
   const IdeaQuery = new Parse.Query(Idea);
   IdeaQuery.equalTo("status", "Submitted");
   IdeaQuery.include("owner");
-  IdeaQuery.find().then((submitted) => {
-    callBack(submitted);
-  });
+  try {
+    IdeaQuery.find().then((submitted) => {
+      callBack(submitted);
+    });
+  } catch (error) {
+    alert(error);
+  }
 }
 
 export function getUsers(callBack) {
   const User = Parse.Object.extend("User");
   const UserQuery = new Parse.Query(User);
   //IdeaQuery.equalTo("status", "Submitted");
-  UserQuery.find().then((users) => {
-    callBack(users);
-  });
+  try {
+    UserQuery.find().then((users) => {
+      callBack(users);
+    });
+  } catch (error) {
+    alert(error);
+  }
 }
 
 export function handleAssigned(userEmail, ideaId, deadline, callBack) {
@@ -55,28 +75,32 @@ export function handleAssigned(userEmail, ideaId, deadline, callBack) {
   const newAssigned = new Assigned();
   const UserQuery = new Parse.Query(Parse.User);
   UserQuery.equalTo("username", userEmail);
-  UserQuery.find().then((user) => {
-    console.log(user[0].id);
-    newAssigned.set("userId", user[0]);
-    newAssigned.set("ideaId", ideaId);
-    newAssigned.set("deadline", deadline);
-    ideaId.set("status", "Assigned");
-    ideaId.set("owner", user[0]);
-    try {
-      newAssigned.save();
-      ideaId.save().then((assignedIdea) => {
-        alert(
-          'You assigned "' +
-            ideaId.get("title") +
-            '" to the user with the email ' +
-            userEmail
-        );
-        callBack();
-      });
-    } catch (error) {
-      alert(error);
-    }
-  });
+  try {
+    UserQuery.find().then((user) => {
+      console.log(user[0].id);
+      newAssigned.set("userId", user[0]);
+      newAssigned.set("ideaId", ideaId);
+      newAssigned.set("deadline", deadline);
+      ideaId.set("status", "Assigned");
+      ideaId.set("owner", user[0]);
+      try {
+        newAssigned.save();
+        ideaId.save().then((assignedIdea) => {
+          alert(
+            'You assigned "' +
+              ideaId.get("title") +
+              '" to the user with the email ' +
+              userEmail
+          );
+          callBack();
+        });
+      } catch (error) {
+        alert(error);
+      }
+    });
+  } catch (error) {
+    alert(error);
+  }
 }
 
 export function handleSubmitted(
@@ -122,20 +146,28 @@ export function handleLoginAttempt(email, password, callBack) {
   const user = new Parse.User();
   user.setPassword(password);
   user.setUsername(email);
-  user.logIn().then((loggedInUser) => {
-    alert("You have logged in with the username " + email);
-    callBack("/assigned");
-    window.location.reload(false);
-  });
+  try {
+    user.logIn().then((loggedInUser) => {
+      alert("You have logged in with the username " + email);
+      callBack("/assigned");
+      window.location.reload(false);
+    });
+  } catch (error) {
+    alert(error);
+  }
 }
 
 export function handleLogoutAttempt(callBack) {
   alert("You have logged out");
-  Parse.User.logOut().then((loggedOutUser) => {
-    callBack(false);
-    window.location.href = "/";
-    window.location.reload(false);
-  });
+  try {
+    Parse.User.logOut().then((loggedOutUser) => {
+      callBack(false);
+      window.location.href = "/";
+      window.location.reload(false);
+    });
+  } catch (error) {
+    alert(error);
+  }
 }
 
 export function handleSignupAttempt(email, password, role, callBack) {
@@ -196,8 +228,12 @@ export function getUserId() {
 }
 
 export function connectToServer(applicationId, javascriptKey, serverURL) {
-  Parse.initialize(applicationId, javascriptKey);
-  Parse.serverURL = serverURL;
+  try {
+    Parse.initialize(applicationId, javascriptKey);
+    Parse.serverURL = serverURL;
+  } catch (error) {
+    alert(error);
+  }
 }
 
 export default {
