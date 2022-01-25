@@ -1,0 +1,27 @@
+.MainContainer {
+    display: flex;
+    height: 100%;
+}
+
+.acc-img {
+    max-width: 50%;
+}
+
+.cont--submitIdea{
+    width: 600px;
+    height: max-content;
+    margin: 15% auto 0px auto;
+}
+
+.form-label {
+    color: black;
+}
+
+.footer{
+    color: white;
+}
+
+.footer > p{
+    padding: 10px;
+    margin: 0 auto;
+}

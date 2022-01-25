@@ -1,0 +1,27 @@
+.navbar-primary{
+    background-color: #0045F6;
+}
+
+.navbar-brand{
+    width: max-content;
+}
+
+.navbar-brand > img {
+    padding: 5px;
+    width: max-content;
+}
+
+.cont--icons {
+    display: flex;
+    width: max-content;
+    height: max-content;
+    margin-left: auto;
+    align-items: center;
+}
+
+.icon {
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
