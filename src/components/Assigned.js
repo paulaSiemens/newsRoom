@@ -33,7 +33,7 @@ export default function Assigned() {
     return (
       <> {/* TODO: discuss with group */}
           {/* TODO: replace with grid */}
-        <div className="acc-container">
+        <div className="topPage-container">
           <h1><img src={iconAssigned} />Assigned</h1>
           <div className="searchbar-container">
             <div className="searchbar-placeholder">
@@ -57,11 +57,13 @@ export default function Assigned() {
             {assignments.map((assignment, i) => (
               <>
                 <Accordion.Item eventKey={i}>
-                  <Accordion.Header >
+                  <Accordion.Header className="acc-header">
                     <b>{assignment.get("ideaId").get("title")}</b>
+                    <p className="acc-deadline">
+                      Deadline:
+                      <i>{" " + assignment.get("deadline")}</i>
+                    </p>
                   </Accordion.Header>
-                    Deadline:
-                    <i>{" " + assignment.get("deadline")}</i>
                   <Accordion.Body>
                     {assignment.get("ideaId").get("description")}
                     <br />
