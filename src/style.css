@@ -1,10 +1,6 @@
 
 /* --- APP  --- */
 
-.App{
-    height: 200%;
-}
-
 .MainContainer {
     display: flex;
     height: 100%;
@@ -170,7 +166,6 @@
     margin-bottom: 0;
     width: 70%;
     height: max-content;
-    border: solid orange;
 }
 
 .container-page > h1{
@@ -229,7 +224,6 @@
 
 .accordion{
     height: max-content;
-    border: solid blue;
 }
 
 .deadline{

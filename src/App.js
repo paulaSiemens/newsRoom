@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+
 import SubmitIdea from "./components/SubmitIdea";
 import Unassigned from "./components/Unassigned";
 import Assigned from "./components/Assigned";
@@ -113,8 +114,8 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
-      <Footer />
-    </div>
+{/*       <Footer />
+ */}    </div>
   );
 }
 
