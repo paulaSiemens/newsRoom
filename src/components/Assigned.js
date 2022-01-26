@@ -122,7 +122,7 @@ export default function Assigned() {
                       <br />
                       <br />
                       <Form>
-                        <Form className="cont--submitIdea">
+                        <Form className="cont--submitArticle">
                           <b>Submit article</b>
                           <br />
                           <br />
