@@ -8,6 +8,7 @@ import iconArtSmall from "../images/icon-articlesize-small.png";
 import iconArtMedium from "../images/icon-articlesize-medium.png";
 import iconArtLarge from "../images/icon-articlesize-large.png";
 import iconArtALL from "../images/icon-articlesize-ALL.png";
+
 export default function Assigned() {
   const [assignments, setAssignments] = useState();
   const [title, setTitle] = useState();
@@ -32,18 +33,13 @@ export default function Assigned() {
   if (Db.getUserRole() === "Editor") {
     return (
       <>
-        {" "}
-        {/* TODO: discuss with group */}
         {/* TODO: replace with grid */}
-        <div className="topPage-container">
-          <h1>
-            <img src={iconAssigned} />
-            Assigned
-          </h1>
-          <div className="searchbar-container">
-            <div className="searchbar-placeholder">
-              <img src={iconSearch} />
-              searchbar placeholder
+        <div className="container-page" >
+          <h1><img src={iconAssigned} />Assigned</h1>
+          <div className="container-searchRow">
+            <div className="searchbar">
+            <img src={iconSearch} />
+            search ...  
             </div>
             <div className="icon-container">
               <img src={iconArtSmall} />
@@ -52,25 +48,20 @@ export default function Assigned() {
               <img src={iconArtALL} />
             </div>
           </div>
-          <div className="acc-topColumn">
-            {" "}
-            {/* TODO: make seperate component, and add column names as array rendered props */}
+          <div className="accTable-header">
             <p>Title</p>
-            <p>Deadline</p>
-            <p>Status</p>
-            <p>Size</p>
           </div>
-          <Accordion defaultActiveKey="0">
+          <Accordion className="accordion" defaultActiveKey="0">
             {assignments.map((assignment, i) => (
               <>
                 <Accordion.Item eventKey={i}>
-                  <Accordion.Header className="acc-header">
+                  <Accordion.Header>
                     <b>{assignment.get("ideaId").get("title")}</b>
-                    <p className="acc-deadline">
-                      Deadline:
+                  </Accordion.Header>
+                    <p className ="deadline">
+                      <b>Deadline:</b>
                       <i>{" " + assignment.get("deadline")}</i>
                     </p>
-                  </Accordion.Header>
                   <Accordion.Body>
                     {assignment.get("ideaId").get("description")}
                     <br />
@@ -92,6 +83,23 @@ export default function Assigned() {
   } else {
     return (
       <>
+        <div className="container-page" >
+          <h1><img src={iconAssigned} />Assigned</h1>
+          <div className="container-searchRow">
+            <div className="searchbar">
+            <img src={iconSearch} />
+            search ...  
+            </div>
+            <div className="icon-container">
+              <img src={iconArtSmall} />
+              <img src={iconArtMedium} />
+              <img src={iconArtLarge} />
+              <img src={iconArtALL} />
+            </div>
+          </div>
+          <div className="accTable-header">
+            <p>Title</p>
+          </div>
         <Accordion defaultActiveKey="0">
           {assignments
             .filter(
@@ -176,6 +184,7 @@ export default function Assigned() {
               </>
             ))}
         </Accordion>
+        </div>
       </>
     );
   }
