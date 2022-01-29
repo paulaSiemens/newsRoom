@@ -3,7 +3,6 @@ import assigned from "../images/icon-assigned.png";
 import unassigned from "../images/icon-unassigned.png";
 import submitted from "../images/icon-submitted.png";
 import archived from "../images/icon-archived.png";
-import ideas from "../images/icon-ideas.png";
 import employees from "../images/icon-employees.png";
 import teamUp from "../images/icon-team-up.png";
 import Db from "./Db";

@@ -14,7 +14,7 @@ export default function Assigned() {
   const [description, setDescription] = useState();
   const [imageName, setImageName] = useState();
   const [imageData, setImageData] = useState();
-  const [submitted, forceUpdate] = useReducer((x) => x + 1, 0);
+  const [submitted, forceUpdate] = useReducer((x) => x + 1, 0)
 
   useEffect(() => {
     Db.getAssigned(setAssignments);
