@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import Db from "./components/Db";
+import Db from "./Db";
 import "./style.css";
 
 Db.connectToServer(

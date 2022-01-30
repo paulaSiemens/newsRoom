@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
-import Db from "./Db";
+import Db from "../Db";
 
 export default function Submitted() {
   const [users, setUsers] = useState();

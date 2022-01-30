@@ -1,7 +1,7 @@
 import { Form, Button } from "react-bootstrap";
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import Db from "./Db";
+import Db from "../Db";
 
 export default function Signup() {
   const [email, setEmail] = useState();
