@@ -1,20 +1,20 @@
-import Header from "./components/Header";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Login from "./components/Login";
-import Signup from "./components/Signup";
+import Header from "./components/bars/Header";
+import Navbar from "./components/menues/sideMenu/Navbar";
+import Footer from "./components/bars/Footer";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
-import SubmitIdea from "./components/SubmitIdea";
-import Unassigned from "./components/Unassigned";
-import Assigned from "./components/Assigned";
-import Submitted from "./components/Submitted";
-import Archived from "./components/Archived";
-import Employees from "./components/Employees";
-import Start from "./components/Start";
+import SubmitIdea from "./pages/SubmitIdea";
+import Unassigned from "./pages/Unassigned";
+import Assigned from "./pages/Assigned";
+import Submitted from "./pages/Submitted";
+import Archived from "./pages/Archived";
+import Employees from "./pages/Employees";
+import Start from "./pages/Start";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Db from "./components/Db";
+import Db from "./Db";
 
 function App() {
   return (

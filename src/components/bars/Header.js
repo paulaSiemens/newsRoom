@@ -1,11 +1,10 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { useState } from "react";
 import { useEffect } from "react";
-import brand from "../images/logo-brand.png";
-import logout from "../images/icon-logout.png";
-import notif from "../images/icon-notif.png";
-import profile from "../images/icon-profile.png";
-import Db, { getUserRole } from "./Db";
+import brand from "../../resources/logo/logo-brand.png";
+import logout from "../../resources/icons/icon-logout.png";
+import notif from "../../resources/icons/icon-notif.png";
+import Db, { getUserRole } from "../../Db";
 
 export default function Header() {
   const [loggedIn, setLoggedIn] = useState();

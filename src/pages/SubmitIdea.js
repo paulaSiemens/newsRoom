@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import Db from "./Db";
+import Db from "../Db";
 import { useNavigate } from "react-router";
 
 export default function SubmitIdea() {

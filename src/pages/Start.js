@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../images/logo-brand.png";
+import logo from "../resources/logo/logo-brand.png";
 
 export default function Start(){
 

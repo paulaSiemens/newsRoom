@@ -1,12 +1,11 @@
-import addIdea from "../images/icon-add.png";
-import assigned from "../images/icon-assigned.png";
-import unassigned from "../images/icon-unassigned.png";
-import submitted from "../images/icon-submitted.png";
-import archived from "../images/icon-archived.png";
-import ideas from "../images/icon-ideas.png";
-import employees from "../images/icon-employees.png";
-import teamUp from "../images/icon-team-up.png";
-import Db from "./Db";
+import addIdea from "../../../resources/icons/icon-add.png";
+import assigned from "../../../resources/icons/icon-assigned.png";
+import unassigned from "../../../resources/icons/icon-unassigned.png";
+import submitted from "../../../resources/icons/icon-submitted.png";
+import archived from "../../../resources/icons/icon-archived.png";
+import employees from "../../../resources/icons/icon-employees.png";
+import teamUp from "../../../resources/icons/icon-team-up.png";
+import Db from "../../../Db";
 
 import React from "react";
 

@@ -1,12 +1,12 @@
 import { useEffect, useState, useReducer } from "react";
 import { Accordion, Form, Button } from "react-bootstrap";
-import Db from "./Db";
-import iconUnassigned from "../images/icon-unassigned.png";
-import iconSearch from "../images/icon-search.png";
-import iconArtSmall from "../images/icon-articlesize-small.png";
-import iconArtMedium from "../images/icon-articlesize-medium.png";
-import iconArtLarge from "../images/icon-articlesize-large.png";
-import iconArtALL from "../images/icon-articlesize-ALL.png";
+import Db from "../Db";
+import iconUnassigned from "../resources/icons/icon-unassigned.png";
+import iconSearch from "../resources/icons/icon-search.png";
+import iconArtSmall from "../resources/icons/icon-articlesize-small.png";
+import iconArtMedium from "../resources/icons/icon-articlesize-medium.png";
+import iconArtLarge from "../resources/icons/icon-articlesize-large.png";
+import iconArtALL from "../resources/icons/icon-articlesize-ALL.png";
 
 export default function Unassigned() {
   const [ideas, setIdeas] = useState();

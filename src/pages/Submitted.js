@@ -1,19 +1,20 @@
-import { useEffect, useState } from "react";
-import { Accordion } from "react-bootstrap";
-import Db from "./Db";
-import iconArchived from "../images/icon-assigned.png";
-import iconSearch from "../images/icon-search.png";
-import iconArtSmall from "../images/icon-articlesize-small.png";
-import iconArtMedium from "../images/icon-articlesize-medium.png";
-import iconArtLarge from "../images/icon-articlesize-large.png";
-import iconArtALL from "../images/icon-articlesize-ALL.png";
+import { useEffect, useState, useReducer } from "react";
+import { Accordion, Form, Button } from "react-bootstrap";
+import Db from "../Db";
+import iconSubmitted from "../resources/icons/icon-submitted.png";
+import iconSearch from "../resources/icons/icon-search.png";
+import iconArtSmall from "../resources/icons/icon-articlesize-small.png";
+import iconArtMedium from "../resources/icons/icon-articlesize-medium.png";
+import iconArtLarge from "../resources/icons/icon-articlesize-large.png";
+import iconArtALL from "../resources/icons/icon-articlesize-ALL.png";
 
 export default function Submitted() {
   const [ideas, setIdeas] = useState();
+  const [archived, forceUpdate] = useReducer((x) => x + 1, 0);
 
   useEffect(() => {
-    Db.getArchived(setIdeas);
-  }, []);
+    Db.getSubmitted(setIdeas);
+  }, [archived]);
 
   if (!ideas) {
     return <p>Loading...</p>;
@@ -23,7 +24,7 @@ export default function Submitted() {
     return (
       <>
         <div className="container-page" >
-          <h1><img src={iconArchived} />Archived</h1>
+          <h1><img src={iconSubmitted} />Submitted</h1>
           <div className="container-searchRow">
             <div className="searchbar">
             <img src={iconSearch} />
@@ -35,7 +36,7 @@ export default function Submitted() {
               <img src={iconArtLarge} />
               <img src={iconArtALL} />
             </div>
-         </div>
+        </div>
          <div className="accTable-header">
            <p>Title</p>
          </div>
@@ -59,9 +60,21 @@ export default function Submitted() {
                   <br />
                   Owner: <b>{idea.get("owner").get("username")}</b>
                   <br />
-                  <b>Date Archived:</b> <i>{" " + idea.get("updatedAt")}</i>
+                  <b>Date Submitted:</b> <i>{" " + idea.get("updatedAt")}</i>
                   <br />
                   <br />
+                  <Form>
+                    <Button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        Db.handleArchived(idea, forceUpdate);
+                      }}
+                      variant="primary"
+                      type="submit"
+                    >
+                      Archive
+                    </Button>
+                  </Form>
                 </Accordion.Body>
               </Accordion.Item>
             </>
@@ -74,7 +87,7 @@ export default function Submitted() {
     return (
       <>
         <div className="container-page" >
-          <h1><img src={iconArchived} />Archived</h1>
+          <h1><img src={iconSubmitted} />Submitted</h1>
           <div className="container-searchRow">
             <div className="searchbar">
             <img src={iconSearch} />
@@ -86,7 +99,7 @@ export default function Submitted() {
               <img src={iconArtLarge} />
               <img src={iconArtALL} />
             </div>
-         </div>
+        </div>
          <div className="accTable-header">
            <p>Title</p>
          </div>
@@ -110,7 +123,7 @@ export default function Submitted() {
                     {idea.get("description")}
                     <br />
                     <br />
-                    <b>Date Archived:</b> <i>{" " + idea.get("updatedAt")}</i>
+                    <b>Date Submitted:</b> <i>{" " + idea.get("updatedAt")}</i>
                     <br />
                     <br />
                   </Accordion.Body>
