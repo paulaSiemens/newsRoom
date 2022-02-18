@@ -16,6 +16,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Db from "./Db";
 
+{/*FIXME: mainContainer double components */}
+
 function App() {
   return (
     <div className="App">

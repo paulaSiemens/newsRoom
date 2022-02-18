@@ -16,7 +16,7 @@ export default function Submitted() {
   if (Db.getUserRole() === "Editor") {
     return (
       <>
-        <Table striped bordered hover>
+        <Table className="table" striped bordered hover>
           <thead>
             <tr>
               <th>Employee ID</th>

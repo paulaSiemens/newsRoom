@@ -1,10 +1,22 @@
 
 /* --- APP  --- */
+.App{
+    width: 100%;
+    border: solid blue;
+}
 
 .MainContainer {
     display: flex;
     height: max-content;
+    width: 100%;
     font-family: 'roboto', sans-serif;
+    border: solid green;
+}
+
+.table{
+    margin: 100px auto;
+    width: 1300px;
+
 }
 
 .acc-img {
