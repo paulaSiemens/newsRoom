@@ -8,6 +8,7 @@ import SubmitIdea from "./pages/SubmitIdea";
 import Unassigned from "./pages/Unassigned";
 import Assigned from "./pages/Assigned";
 import Submitted from "./pages/Submitted";
+import Ideas from "./pages/Ideas";
 import Archived from "./pages/Archived";
 import Employees from "./pages/Employees";
 import Start from "./pages/Start";
@@ -80,6 +81,19 @@ function App() {
                 <div className="mainContainer">
                   <Navbar />
                   <Submitted />
+                </div>
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/ideas"
+            element={
+              Db.isLoggedIn() ? (
+                <div className="mainContainer">
+                  <Navbar />
+                  <Ideas />
                 </div>
               ) : (
                 <Navigate to="/login" />
