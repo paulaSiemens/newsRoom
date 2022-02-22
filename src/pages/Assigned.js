@@ -1,8 +1,8 @@
 import { useEffect, useState, useReducer } from "react";
-import { Accordion, Form, Button } from "react-bootstrap";
+import { Accordion, Form, Button, Container } from "react-bootstrap";
 import Db from "../Db";
-import iconAssigned from "../resources/icons/icon-assigned.png";
-import iconSearch from "../resources/icons/icon-search.png";
+import iconAssigned from "../resources/icons/icon-assigned.svg";
+import iconSearch from "../resources/icons/icon-search.svg";
 import iconArtSmall from "../resources/icons/icon-articlesize-small.png";
 import iconArtMedium from "../resources/icons/icon-articlesize-medium.png";
 import iconArtLarge from "../resources/icons/icon-articlesize-large.png";
@@ -28,16 +28,19 @@ export default function Assigned() {
     return (
       <>
         {/* TODO: replace with grid */}
-        <div className="container-page">
-          <h1>
-            <img src={iconAssigned} />
-            Assigned
-          </h1>
-          <div className="container-searchRow">
+        <Container className="container-page" >
+          <div className="container-page-header">
+
+            <h1><img src={iconAssigned} />Assigned</h1>
+
+          </div> 
+          <div className="container-page-body">
+            
             <div className="searchbar">
               <img src={iconSearch} />
-              search ...
+                  search ...  
             </div>
+      
             <div className="icon-container">
               <img src={iconArtSmall} />
               <img src={iconArtMedium} />
@@ -45,9 +48,12 @@ export default function Assigned() {
               <img src={iconArtALL} />
             </div>
           </div>
+
           <div className="accTable-header">
             <p>Title</p>
           </div>
+         
+         
           <Accordion className="accordion" defaultActiveKey="0">
             {assignments.map((assignment, i) => (
               <>
@@ -71,25 +77,30 @@ export default function Assigned() {
                     <br />
                   </Accordion.Body>
                 </Accordion.Item>
+              
               </>
+            
             ))}
           </Accordion>
-        </div>
+        </Container>
       </>
     );
   } else {
     return (
       <>
-        <div className="container-page">
-          <h1>
-            <img src={iconAssigned} />
-            Assigned
-          </h1>
-          <div className="container-searchRow">
+       <Container className="container-page" >
+          <div className="container-page-header">
+
+            <h1><img src={iconAssigned} />Assigned</h1>
+
+          </div> 
+          <div className="container-page-body">
+            
             <div className="searchbar">
               <img src={iconSearch} />
-              search ...
+                  search ...  
             </div>
+      
             <div className="icon-container">
               <img src={iconArtSmall} />
               <img src={iconArtMedium} />
@@ -97,6 +108,7 @@ export default function Assigned() {
               <img src={iconArtALL} />
             </div>
           </div>
+
           <div className="accTable-header">
             <p>Title</p>
           </div>
@@ -184,10 +196,11 @@ export default function Assigned() {
                       </Form>{" "}
                     </Accordion.Body>
                   </Accordion.Item>
+                  
                 </>
               ))}
           </Accordion>
-        </div>
+          </Container>
       </>
     );
   }
