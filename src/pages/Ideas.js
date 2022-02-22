@@ -24,7 +24,7 @@ export default function Ideas(){
               search ...  
         </div>
          
-        <a href="/idea" target="_blank">
+        <a href="/submitidea" target="_blank">
         <Button className="btn-primary"> Create Idea </Button>
         </a>
 
