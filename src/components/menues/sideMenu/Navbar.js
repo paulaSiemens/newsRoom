@@ -1,10 +1,10 @@
-import addIdea from "../../../resources/icons/icon-add.png";
-import assigned from "../../../resources/icons/icon-assigned.png";
-import unassigned from "../../../resources/icons/icon-unassigned.png";
-import submitted from "../../../resources/icons/icon-submitted.png";
-import archived from "../../../resources/icons/icon-archived.png";
-import employees from "../../../resources/icons/icon-employees.png";
-import teamUp from "../../../resources/icons/icon-team-up.png";
+import ideas from "../../../resources/icons/icon-ideas.svg";
+import assigned from "../../../resources/icons/icon-assigned.svg";
+import unassigned from "../../../resources/icons/icon-uassigned.svg";
+import submitted from "../../../resources/icons/icon-submitted.svg";
+import archived from "../../../resources/icons/icon-archived.svg";
+import employees from "../../../resources/icons/icon-team-up.svg";
+import teamUp from "../../../resources/icons/icon-team-up.svg";
 import Db from "../../../Db";
 
 import React from "react";
@@ -29,7 +29,7 @@ export default function SideNav() {
           Submitted
         </a>
         <a className="navbar-link" href="/ideas">
-          <img className="navbar-img" src={submitted} />
+          <img className="navbar-img" src={ideas} />
           Ideas
         </a>
         <a className="navbar-link" href="/archived">
@@ -47,10 +47,10 @@ export default function SideNav() {
   else {
     return (
       <nav className="navbar-container">
-        <a className="navbar-link" href="/submitIdea">
+       {/*  <a className="navbar-link" href="/submitIdea">
           <img className="navbar-img" src={addIdea} />
           Create new Idea
-        </a>
+        </a> */}
         <a className="navbar-link" href="/assigned">
           <img className="navbar-img" src={assigned} />
           Assigned
@@ -60,7 +60,7 @@ export default function SideNav() {
           Submitted
         </a>
         <a className="navbar-link" href="/ideas">
-          <img className="navbar-img" src={submitted} />
+          <img className="navbar-img" src={ideas} />
           Ideas
         </a>
         <a className="navbar-link" href="/archived">
@@ -68,10 +68,10 @@ export default function SideNav() {
           Archived
         </a>
         <a className="navbar-link" href="/employees">
-          <img className="navbar-img--wide" src={teamUp} />
+          <img className="navbar-img" src={teamUp} />
           Team Up
         </a>
-        <div className="navbar-filler"></div>
+        
       </nav>
     );
   }

@@ -1,8 +1,8 @@
 import { useEffect, useState, useReducer } from "react";
-import { Accordion, Form, Button } from "react-bootstrap";
+import { Accordion, Form, Button,Container} from "react-bootstrap";
 import Db from "../Db";
-import iconSubmitted from "../resources/icons/icon-submitted.png";
-import iconSearch from "../resources/icons/icon-search.png";
+import iconSubmitted from "../resources/icons/icon-submitted.svg";
+import iconSearch from "../resources/icons/icon-search.svg";
 
 
 export default function Submitted() {
@@ -20,15 +20,31 @@ export default function Submitted() {
   if (Db.getUserRole() === "Editor") {
     return (
       <>
-        <div className="container-page" >
-          <h1><img src={iconSubmitted} />Submitted</h1>
+        <Container className="container-page" >
+          <div className="container-page-header">
+
+            <h1><img src={iconSubmitted} />Submitted</h1>
+
           
-            <div className="searchbar">
-            <img src={iconSearch} />
-            search ...  
-            </div>
+          </div> 
+          <div className="container-page-body">
             
+            <div className="searchbar">
+              <img src={iconSearch} />
+                  search ...  
+            </div>
+         
+       
+
+          </div>
+
+      
+     
         
+      
+      
+
+     
        
         <Accordion defaultActiveKey="0">
           {ideas.map((idea, i) => (
@@ -70,20 +86,31 @@ export default function Submitted() {
             </>
           ))}
         </Accordion>
-        </div>
+        </Container>
       </>
+      
     );
   } else {
     return (
       <>
-        <div className="container-page" >
-           <h1><img src={iconSubmitted} />Submitted</h1>
+        <Container className="container-page" >
+          <div className="container-page-header">
+
+            <h1><img src={iconSubmitted} />Submitted</h1>
+
           
-            <div className="searchbar">
-            <img src={iconSearch} />
-            search ...  
-            </div>
+          </div> 
+          <div className="container-page-body">
             
+            <div className="searchbar">
+              <img src={iconSearch} />
+                  search ...  
+            </div>
+         
+       
+
+          </div>
+
        
         
          <Accordion defaultActiveKey="0">
@@ -114,7 +141,9 @@ export default function Submitted() {
               </>
             ))}
         </Accordion>
-      </div>
+        
+      
+      </Container>
         
       </>
     );

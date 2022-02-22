@@ -34,7 +34,7 @@ export default function SubmitIdea() {
           variant="primary"
           type="submit"
         >
-          Generate random idea
+          Upload idea
         </Button>
         <br />
         <br />

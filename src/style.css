@@ -1,7 +1,11 @@
 
 /* --- APP  --- */
 
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
 .navbar{
     margin-top: 0px;
@@ -36,6 +40,7 @@
     display: flex;
     font-family: 'roboto', sans-serif;
     width: 100%;
+    height: 83%;
 }
 
 
@@ -69,14 +74,7 @@
 
 
 
-.col-md-4{
-    background-color: #f600ea;
-  
-   
-}
-.col-md-8{
-    background-color:  greenyellow;
-}
+
 div{
     border: 1px solid red;
   }
@@ -120,6 +118,7 @@ div{
 .footer{
     color: white;
     background-color: #5C88FA;
+    height: 50px;
 }
 
 .footer > p{
@@ -160,25 +159,20 @@ div{
 
 
 
-.navbar-filler{
-    width: 100%;
-    height: wrap;
-} /*FIXME: re-watch css grid tutorial*/
-
 .navbar-img{
    
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     margin: 30px;
     margin-inline-start: 30px;
     flex-wrap: wrap;
 }
 
-.navbar-img--wide{
-    width: 40px;
-    height: 25px;
-   margin: 10px;
+
+.navbar-img:hover{
+color: #5C88FA;
 }
+
 /* --- WELCOMEPAGE --- */
 
 .canvas{
@@ -233,6 +227,7 @@ div{
 
 .container-page-header > h1{
     font-family: 'roboto', sans-serif;
+    color: #002B99;
     font-size: 24px;
     margin-left: 50px;
     align-items: center;
@@ -251,13 +246,13 @@ div{
 
 .searchbar{
     border: hidden;
-    background-color: #E6E7E9;
+    background-color: #DDE7FF;
     border-radius: 5px;
     margin: 50px;
     height: 40px;
     padding: 5px;
     width: 600px;
-    color: grey;
+    color: #002B99;
     font-family: 'roboto';
     font-weight: 100;
     font-size: 14px;
@@ -292,19 +287,21 @@ div{
 
 .icon-container > img {
     margin: 5px;
+    
 }
 
 .accTable-header{
     width: 100%;
-    height: 60px;
+    height: 47px;
     margin-bottom: 10px;
     background-color: #0045F6;
-    color: white;
+    
 }
 
 .accTable-header > p{
-    margin-left: 21px;
-    padding-top: 17px;
+    margin-left: 23px;
+    padding-top: 10px;
+    color: white;
 }
 
 .accordion{

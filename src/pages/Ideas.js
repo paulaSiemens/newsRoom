@@ -1,7 +1,7 @@
 
 import { Button, Container } from "react-bootstrap";
-import iconSubmitted from "../resources/icons/icon-submitted.png";
-import iconSearch from "../resources/icons/icon-search.png";
+import iconIdeas from "../resources/icons/icon-ideas.svg";
+import iconSearch from "../resources/icons/icon-search.svg";
 
 
 
@@ -13,7 +13,7 @@ export default function Ideas(){
     <Container className="container-page" >
       <div className="container-page-header">
 
-        <h1><img src={iconSubmitted} />Ideas</h1>
+        <h1><img src={iconIdeas} />Ideas</h1>
 
       
       </div> 
@@ -24,7 +24,7 @@ export default function Ideas(){
               search ...  
         </div>
          
-        <a href="/submitidea" target="_blank">
+        <a href="/idea" target="_blank">
         <Button className="btn-primary"> Create Idea </Button>
         </a>
 
