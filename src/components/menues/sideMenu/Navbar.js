@@ -15,10 +15,10 @@ export default function SideNav() {
   if (Db.getUserRole() == "Editor") {
     return (
       <nav className="navbar-container">
-
+        
         <a className="navbar-link" href="/assigned">
-          <img className="navbar-img" src={assigned} />
-          Assigned
+          <img className="navbar-img" src={assigned} /><p> Assigned</p>
+         
         </a>
         <a className="navbar-link" href="/unassigned">
           <img className="navbar-img" src={unassigned} />
