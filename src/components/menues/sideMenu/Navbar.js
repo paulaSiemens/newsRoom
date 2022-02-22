@@ -15,9 +15,10 @@ export default function SideNav() {
   if (Db.getUserRole() == "Editor") {
     return (
       <nav className="navbar-container">
+        
         <a className="navbar-link" href="/assigned">
-          <img className="navbar-img" src={assigned} />
-          Assigned
+          <img className="navbar-img" src={assigned} /><p> Assigned</p>
+         
         </a>
         <a className="navbar-link" href="/unassigned">
           <img className="navbar-img" src={unassigned} />
@@ -27,10 +28,10 @@ export default function SideNav() {
           <img className="navbar-img" src={submitted} />
           Submitted
         </a>
-{/*         <a className="navbar-link" href="/archived">
-          <img className="navbar-img" src={ideas} />
+        <a className="navbar-link" href="/ideas">
+          <img className="navbar-img" src={submitted} />
           Ideas
-        </a> */}
+        </a>
         <a className="navbar-link" href="/archived">
           <img className="navbar-img" src={archived} />
           Archived
@@ -42,7 +43,8 @@ export default function SideNav() {
         <div className="navbar-filler"></div>
       </nav>
     );
-  } else {
+  } 
+  else {
     return (
       <nav className="navbar-container">
         <a className="navbar-link" href="/submitIdea">
@@ -56,6 +58,10 @@ export default function SideNav() {
         <a className="navbar-link" href="/submitted">
           <img className="navbar-img" src={submitted} />
           Submitted
+        </a>
+        <a className="navbar-link" href="/ideas">
+          <img className="navbar-img" src={submitted} />
+          Ideas
         </a>
         <a className="navbar-link" href="/archived">
           <img className="navbar-img" src={archived} />

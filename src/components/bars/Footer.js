@@ -3,7 +3,7 @@ import { Navbar } from "react-bootstrap";
 
 function Footer() {
     return (
-        <Navbar className="footer" bg="primary">
+        <Navbar className="footer" >
             <p>Technical Interaction Design - Group 15</p>
         </Navbar>
     )

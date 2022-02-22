@@ -29,12 +29,7 @@ export default function Submitted() {
             <img src={iconSearch} />
             search ...  
             </div>
-            <div className="icon-container">
-              <img src={iconArtSmall} />
-              <img src={iconArtMedium} />
-              <img src={iconArtLarge} />
-              <img src={iconArtALL} />
-            </div>
+          
          </div>
          <div className="accTable-header">
            <p>Title</p>
@@ -80,12 +75,7 @@ export default function Submitted() {
             <img src={iconSearch} />
             search ...  
             </div>
-            <div className="icon-container">
-              <img src={iconArtSmall} />
-              <img src={iconArtMedium} />
-              <img src={iconArtLarge} />
-              <img src={iconArtALL} />
-            </div>
+           
          </div>
          <div className="accTable-header">
            <p>Title</p>
