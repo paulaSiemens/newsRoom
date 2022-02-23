@@ -1,12 +1,9 @@
 import { useEffect, useState, useReducer } from "react";
-import { Accordion, Form, Button } from "react-bootstrap";
+import { Accordion, Form, Button, Container } from "react-bootstrap";
 import Db from "../Db";
-import iconUnassigned from "../resources/icons/icon-unassigned.png";
-import iconSearch from "../resources/icons/icon-search.png";
-import iconArtSmall from "../resources/icons/icon-articlesize-small.png";
-import iconArtMedium from "../resources/icons/icon-articlesize-medium.png";
-import iconArtLarge from "../resources/icons/icon-articlesize-large.png";
-import iconArtALL from "../resources/icons/icon-articlesize-ALL.png";
+import iconUnassigned from "../resources/icons/icon-uassigned.svg";
+import iconSearch from "../resources/icons/icon-search.svg";
+
 
 export default function Unassigned() {
   const [ideas, setIdeas] = useState();
@@ -24,23 +21,31 @@ export default function Unassigned() {
 
   return (
     <>
-      <div className="container-page" >
-          <h1><img src={iconUnassigned} />Unassigned</h1>
-          <div className="container-searchRow">
-            <div className="searchbar">
-            <img src={iconSearch} />
-            search ...  
-            </div>
-            <div className="icon-container">
-              <img src={iconArtSmall} />
-              <img src={iconArtMedium} />
-              <img src={iconArtLarge} />
-              <img src={iconArtALL} />
-            </div>
-          </div>
-          <div className="accTable-header">
-            <p>Title</p>
-          </div>
+      <Container className="container-page" >
+      <div className="container-page-header">
+
+        <h1><img src={iconUnassigned} />Unassigned</h1>
+
+      
+      </div> 
+      <div className="container-page-body">
+         
+        <div className="searchbar">
+          <img src={iconSearch} />
+              search ...  
+        </div>
+         
+        <a href="/ideas" target="_blank">
+        <Button className="btn-primary"> Select Idea </Button>
+        </a>
+
+      </div>
+
+      <div className="accTable-header">
+        <p>Title</p>
+      </div>
+     
+      
       <Accordion defaultActiveKey="0">
         {ideas.map((idea, i) => (
           <>
@@ -91,7 +96,9 @@ export default function Unassigned() {
           </>
         ))}
       </Accordion>
-      </div>
+
+    </Container>
+      
     </>
   );
 }

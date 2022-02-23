@@ -35,7 +35,7 @@ export default function Idea(){
         variant="primary"
         type="submit"
       >
-        Generate random idea
+        Generate idea
       </Button>
       <br />
       <br />
@@ -49,7 +49,7 @@ export default function Idea(){
         />
       </Form.Group>
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Your idea</Form.Label>
+        <Form.Label>Idea</Form.Label>
         <Form.Control
           as="textarea"
           rows={3}

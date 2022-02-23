@@ -17,7 +17,7 @@ export default function SideNav() {
       <nav className="navbar-container">
         
         <a className="navbar-link" href="/assigned">
-          <img className="navbar-img" src={assigned} /><p> Assigned</p>
+          <img className="navbar-img" src={assigned} /> Assigned
          
         </a>
         <a className="navbar-link" href="/unassigned">
@@ -37,9 +37,10 @@ export default function SideNav() {
           Archived
         </a>
         <a className="navbar-link" href="/employees">
-          <img className="navbar-img--wide" src={employees} />
+          <img className="navbar-img" src={teamUp} />
           Employees
         </a>
+       
         <div className="navbar-filler"></div>
       </nav>
     );
