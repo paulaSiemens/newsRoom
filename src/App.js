@@ -4,7 +4,7 @@ import Footer from "./components/bars/Footer";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
-import SubmitIdea from "./pages/SubmitIdea";
+import Idea from "./pages/Idea";
 import Unassigned from "./pages/Unassigned";
 import Assigned from "./pages/Assigned";
 import Submitted from "./pages/Submitted";
@@ -36,12 +36,12 @@ function App() {
             element={!Db.isLoggedIn() ? <Login /> : <Navigate to="/" />}
           />
           <Route
-            path="/submitIdea"
+            path="/idea"
             element={
               Db.isLoggedIn() ? (
                 <div className="mainContainer">
                   <Navbar />
-                  <SubmitIdea />
+                  <Idea />
                 </div>
               ) : (
                 <Navigate to="/login" />

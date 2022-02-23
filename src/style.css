@@ -18,7 +18,7 @@
 
 .container-header{
    
-    height: 120%;
+    height: 125%;
     background-color: #0045F6;
     width: 300px;
     margin-left: 0px;
@@ -61,7 +61,7 @@
 }
 
 .form-label {
-    color: black;
+    color: #002B99;;
 }
 
 /* --- HEADER  --- */
@@ -73,7 +73,7 @@
 } */
 
 
-
+/* 
 
 div{
     border: 1px solid red;
@@ -82,7 +82,7 @@ div{
     border: 1px solid greenyellow;
   }
   
-   
+    */
 
 
 .cont--icons {
@@ -143,9 +143,9 @@ div{
 
 .navbar-link{
     width: 100%;
-    height: 100%;
+    height: 90%;
     color: #002B99;
-    padding-top: 20px; /*FIXME: vertical centering*/
+    padding-top: 15 px; /*FIXME: vertical centering*/
     text-align: left;
     text-decoration: none;
     
@@ -170,7 +170,7 @@ div{
 
 
 .navbar-img:hover{
-color: #5C88FA;
+color: #f1f1f1;
 }
 
 /* --- WELCOMEPAGE --- */
