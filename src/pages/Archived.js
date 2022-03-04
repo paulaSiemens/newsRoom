@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
-import { Accordion } from "react-bootstrap";
+import { Accordion, Container } from "react-bootstrap";
 import Db from "../Db";
-import iconArchived from "../resources/icons/icon-assigned.png";
-import iconSearch from "../resources/icons/icon-search.png";
-import iconArtSmall from "../resources/icons/icon-articlesize-small.png";
-import iconArtMedium from "../resources/icons/icon-articlesize-medium.png";
-import iconArtLarge from "../resources/icons/icon-articlesize-large.png";
-import iconArtALL from "../resources/icons/icon-articlesize-ALL.png";
+import iconArchived from "../resources/icons/icon-assigned.svg";
+import iconSearch from "../resources/icons/icon-search.svg";
+
 
 export default function Submitted() {
   const [ideas, setIdeas] = useState();
@@ -29,12 +26,7 @@ export default function Submitted() {
             <img src={iconSearch} />
             search ...  
             </div>
-            <div className="icon-container">
-              <img src={iconArtSmall} />
-              <img src={iconArtMedium} />
-              <img src={iconArtLarge} />
-              <img src={iconArtALL} />
-            </div>
+          
          </div>
          <div className="accTable-header">
            <p>Title</p>
@@ -73,23 +65,28 @@ export default function Submitted() {
   } else {
     return (
       <>
-        <div className="container-page" >
-          <h1><img src={iconArchived} />Archived</h1>
-          <div className="container-searchRow">
-            <div className="searchbar">
-            <img src={iconSearch} />
-            search ...  
-            </div>
-            <div className="icon-container">
-              <img src={iconArtSmall} />
-              <img src={iconArtMedium} />
-              <img src={iconArtLarge} />
-              <img src={iconArtALL} />
-            </div>
-         </div>
-         <div className="accTable-header">
-           <p>Title</p>
-         </div>
+        <Container className="container-page" >
+          <div className="container-page-header">
+
+            <h1><img src={iconArchived} />Archived</h1>
+
+      
+          </div> 
+          <div className="container-page-body">
+         
+              <div className="searchbar">
+                <img src={iconSearch} />
+                  search ...  
+              </div>
+         
+          
+          </div>
+
+          <div className="accTable-header">
+            <p>Title</p>
+          </div>
+        
+   
         <Accordion defaultActiveKey="0">
           {ideas
             .filter((idea) => idea.get("owner").id === Db.getUserId())
@@ -118,7 +115,9 @@ export default function Submitted() {
               </>
             ))}
         </Accordion>
-        </div>
+        
+        </Container>
+
       </>
     );
   }

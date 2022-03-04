@@ -1,10 +1,10 @@
-import addIdeaIcon from "../../../resources/icons/icon-add.png";
-import assignedIcon from "../../../resources/icons/icon-assigned.png";
-import unassignedIcon from "../../../resources/icons/icon-unassigned.png";
-import submittedIcon from "../../../resources/icons/icon-submitted.png";
-import archivedIcon from "../../../resources/icons/icon-archived.png";
-import employeesIcon from "../../../resources/icons/icon-employees.png";
-import teamUpIcon from "../../../resources/icons/icon-team-up.png";
+import addIdeaIcon from "../../../resources/icons/icon-ideas.svg";
+import assignedIcon from "../../../resources/icons/icon-assigned.svg";
+import unassignedIcon from "../../../resources/icons/icon-uassigned.svg";
+import submittedIcon from "../../../resources/icons/icon-submitted.svg";
+import archivedIcon from "../../../resources/icons/icon-archived.svg";
+import employeesIcon from "../../../resources/icons/icon-team-up.svg";
+import teamUpIcon from "../../../resources/icons/icon-team-up.svg";
 import Db from "../../../Db";
 import Navlink from "./Navlink";
 
@@ -43,7 +43,8 @@ export default function SideNav() {
         <div className="navbar-filler"></div> {/*FIXME: navbar filler*/}
       </nav>
     );
-  } else {
+  } 
+  else {
     return (
       <nav className="navbar-container">
         <Navlink 
