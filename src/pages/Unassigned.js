@@ -1,9 +1,9 @@
 import { useEffect, useState, useReducer } from "react";
 import { Accordion, Form, Button, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Db from "../Db";
 import iconUnassigned from "../resources/icons/icon-uassigned.svg";
 import iconSearch from "../resources/icons/icon-search.svg";
-
 
 export default function Unassigned() {
   const [ideas, setIdeas] = useState();
@@ -21,32 +21,28 @@ export default function Unassigned() {
 
   return (
     <>
-      <Container className="container-page" >
-      <div className="container-page-header">
-
-        <h1><img src={iconUnassigned} />Unassigned</h1>
-
-      
-      </div> 
-      <div className="container-page-body">
+      <main className="main" >
+      <h1 className="main-title">
+        <img className="main-img" src={iconUnassigned} />
+        Unassigned
+      </h1>
          
-        <div className="searchbar">
-          <img src={iconSearch} />
-              search ...  
-        </div>
-         
-        <a href="/ideas" target="_blank">
-        <Button className="btn-primary"> Select Idea </Button>
-        </a>
-
+      <div className="searchbar">
+        <img src={iconSearch} />
+          search ...  
       </div>
+         
+      <Link to="/ideas">
+      <Button className="btn-primary"> Select Idea </Button>
+      </Link>
 
-      <div className="accTable-header">
+      <div className="acc-header">
         <p>Title</p>
       </div>
-     
       
-      <Accordion defaultActiveKey="0">
+      <Accordion 
+        className="acc-table"
+        defaultActiveKey="0">
         {ideas.map((idea, i) => (
           <>
             <Accordion.Item eventKey={i}>
@@ -97,7 +93,7 @@ export default function Unassigned() {
         ))}
       </Accordion>
 
-    </Container>
+    </main>
       
     </>
   );

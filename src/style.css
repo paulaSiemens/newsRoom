@@ -69,21 +69,6 @@
 	margin: 5px;
 }
 
-/*
-.icon-profile {
-	border-radius: 100%;
-	width: 40px;
-	height: 40px;
-	margin: 5px;
-	background-color: #0045f6;
-	color: white;
-	font-size: 24px;
-	font-weight: bold;
-	text-align: center;
-	font-style: regular;
-}
-*/
-
 .MainContainer {
 	display: flex;
 	font-family: "roboto", sans-serif;
@@ -219,7 +204,7 @@ div{
 
 /* --- PAGES  --- */
 
-.container-page {
+.main {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 100px;
@@ -232,7 +217,7 @@ div{
 	}
 }
 
-.container-page-header > h1 {
+.main-title {
 	font-family: "roboto", sans-serif;
 	color: #002b99;
 	font-size: 24px;
@@ -240,7 +225,7 @@ div{
 	align-items: center;
 }
 
-.container-page-header > h1 > img {
+.main-img {
 	margin-right: 20px;
 }
 
@@ -270,7 +255,6 @@ div{
 
 .btn-primary {
 	text-decoration: none;
-
 	background-color: #0045f6;
 }
 
@@ -289,20 +273,20 @@ div{
 	margin: 5px;
 }
 
-.accTable-header {
+.acc-header {
 	width: 100%;
 	height: 47px;
 	margin-bottom: 10px;
 	background-color: #0045f6;
 }
 
-.accTable-header > p {
+.acc-header > p {
 	margin-left: 23px;
 	padding-top: 10px;
 	color: white;
 }
 
-.accordion {
+.acc-table {
 	height: max-content;
 }
 
