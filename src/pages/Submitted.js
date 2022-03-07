@@ -1,12 +1,9 @@
 import { useEffect, useState, useReducer } from "react";
-import { Accordion, Form, Button } from "react-bootstrap";
+import { Accordion, Form, Button,Container} from "react-bootstrap";
 import Db from "../Db";
-import iconSubmitted from "../resources/icons/icon-submitted.png";
-import iconSearch from "../resources/icons/icon-search.png";
-import iconArtSmall from "../resources/icons/icon-articlesize-small.png";
-import iconArtMedium from "../resources/icons/icon-articlesize-medium.png";
-import iconArtLarge from "../resources/icons/icon-articlesize-large.png";
-import iconArtALL from "../resources/icons/icon-articlesize-ALL.png";
+import iconSubmitted from "../resources/icons/icon-submitted.svg";
+import iconSearch from "../resources/icons/icon-search.svg";
+
 
 export default function Submitted() {
   const [ideas, setIdeas] = useState();
@@ -23,23 +20,32 @@ export default function Submitted() {
   if (Db.getUserRole() === "Editor") {
     return (
       <>
-        <div className="container-page" >
-          <h1><img src={iconSubmitted} />Submitted</h1>
-          <div className="container-searchRow">
+        <Container className="container-page" >
+          <div className="container-page-header">
+
+            <h1><img src={iconSubmitted} />Submitted</h1>
+
+          
+          </div> 
+          <div className="container-page-body">
+            
             <div className="searchbar">
-            <img src={iconSearch} />
-            search ...  
+              <img src={iconSearch} />
+                  search ...  
             </div>
-            <div className="icon-container">
-              <img src={iconArtSmall} />
-              <img src={iconArtMedium} />
-              <img src={iconArtLarge} />
-              <img src={iconArtALL} />
-            </div>
-        </div>
-         <div className="accTable-header">
-           <p>Title</p>
-         </div>
+         
+       
+
+          </div>
+
+      
+     
+        
+      
+      
+
+     
+       
         <Accordion defaultActiveKey="0">
           {ideas.map((idea, i) => (
             <>
@@ -80,30 +86,34 @@ export default function Submitted() {
             </>
           ))}
         </Accordion>
-        </div>
+        </Container>
       </>
+      
     );
   } else {
     return (
       <>
-        <div className="container-page" >
-          <h1><img src={iconSubmitted} />Submitted</h1>
-          <div className="container-searchRow">
+        <Container className="container-page" >
+          <div className="container-page-header">
+
+            <h1><img src={iconSubmitted} />Submitted</h1>
+
+          
+          </div> 
+          <div className="container-page-body">
+            
             <div className="searchbar">
-            <img src={iconSearch} />
-            search ...  
+              <img src={iconSearch} />
+                  search ...  
             </div>
-            <div className="icon-container">
-              <img src={iconArtSmall} />
-              <img src={iconArtMedium} />
-              <img src={iconArtLarge} />
-              <img src={iconArtALL} />
-            </div>
-        </div>
-         <div className="accTable-header">
-           <p>Title</p>
-         </div>
-        <Accordion defaultActiveKey="0">
+         
+       
+
+          </div>
+
+       
+        
+         <Accordion defaultActiveKey="0">
           {ideas
             .filter((idea) => idea.get("owner").id === Db.getUserId())
             .map((idea, i) => (
@@ -131,7 +141,10 @@ export default function Submitted() {
               </>
             ))}
         </Accordion>
-        </div>
+        
+      
+      </Container>
+        
       </>
     );
   }

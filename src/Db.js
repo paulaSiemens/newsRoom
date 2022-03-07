@@ -187,14 +187,20 @@ export function handleSignupAttempt(email, password, role, callBack) {
   }
 }
 
-export function handleIdea(title, description) {
+export async function handleIdea(title, description) {
+  
   const Idea = Parse.Object.extend("Idea");
   const newIdea = new Idea();
+
   newIdea.set("title", title);
   newIdea.set("description", description);
-  newIdea.set("user", Parse.User.current());
+  newIdea.set("owner", Parse.User.current());
+  newIdea.set("authors", [Parse.User.current()]);
+
+
+
   try {
-    newIdea.save().then((ideaSubmitted) => {
+     await newIdea.save().then((ideaSubmitted) => {
       alert('You submitted "' + title + '" as an article suggestion');
       window.location.reload(false);
     });
