@@ -14,7 +14,6 @@ export const Container = styled.div`
 
 export const Title = styled.p`
     padding: 10px;
-    
     color: #FFFFFF;
     font-size: 16px;
     font-family: "roboto", sans-serif;
