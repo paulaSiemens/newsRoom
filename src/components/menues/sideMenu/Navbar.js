@@ -1,78 +1,83 @@
-import ideas from "../../../resources/icons/icon-ideas.svg";
-import assigned from "../../../resources/icons/icon-assigned.svg";
-import unassigned from "../../../resources/icons/icon-uassigned.svg";
-import submitted from "../../../resources/icons/icon-submitted.svg";
-import archived from "../../../resources/icons/icon-archived.svg";
-import employees from "../../../resources/icons/icon-team-up.svg";
-import teamUp from "../../../resources/icons/icon-team-up.svg";
+import addIdeaIcon from "../../../resources/icons/icon-ideas.svg";
+import assignedIcon from "../../../resources/icons/icon-assigned.svg";
+import unassignedIcon from "../../../resources/icons/icon-uassigned.svg";
+import submittedIcon from "../../../resources/icons/icon-submitted.svg";
+import archivedIcon from "../../../resources/icons/icon-archived.svg";
+import employeesIcon from "../../../resources/icons/icon-team-up.svg";
+import teamUpIcon from "../../../resources/icons/icon-team-up.svg";
 import Db from "../../../Db";
+import Navlink from "./Navlink";
 
 import React from "react";
-
-/*FIXME: code dublication - move to seperate component + props */
 
 export default function SideNav() {
   if (Db.getUserRole() == "Editor") {
     return (
       <nav className="navbar-container">
-        
-        <a className="navbar-link" href="/assigned">
-          <img className="navbar-img" src={assigned} /> Assigned
-         
-        </a>
-        <a className="navbar-link" href="/unassigned">
-          <img className="navbar-img" src={unassigned} />
-          Unassigned
-        </a>
-        <a className="navbar-link" href="/submitted">
-          <img className="navbar-img" src={submitted} />
-          Submitted
-        </a>
-        <a className="navbar-link" href="/ideas">
-          <img className="navbar-img" src={ideas} />
-          Ideas
-        </a>
-        <a className="navbar-link" href="/archived">
-          <img className="navbar-img" src={archived} />
-          Archived
-        </a>
-        <a className="navbar-link" href="/employees">
-          <img className="navbar-img" src={teamUp} />
-          Employees
-        </a>
-       
-        <div className="navbar-filler"></div>
+        <Navlink 
+          link="assigned"
+          icon={assignedIcon}
+          linkName="Assigned"        
+        />
+        <Navlink 
+          link="unassigned"
+          icon={unassignedIcon}
+          linkName="Unassigned"        
+        />
+        <Navlink 
+          link="submitted"
+          icon={submittedIcon}
+          linkName="Submitted"        
+        />
+        <Navlink 
+          link="archived"
+          icon={archivedIcon}
+          linkName="Archived"        
+        />
+        <Navlink 
+          link="employees"
+          icon={employeesIcon}
+          linkName="Employees"        
+        />
+
+        <div className="navbar-filler"></div> {/*FIXME: navbar filler*/}
       </nav>
     );
   } 
   else {
     return (
       <nav className="navbar-container">
-       {/*  <a className="navbar-link" href="/submitIdea">
-          <img className="navbar-img" src={addIdea} />
-          Create new Idea
-        </a> */}
-        <a className="navbar-link" href="/assigned">
-          <img className="navbar-img" src={assigned} />
-          Assigned
-        </a>
-        <a className="navbar-link" href="/submitted">
-          <img className="navbar-img" src={submitted} />
-          Submitted
-        </a>
-        <a className="navbar-link" href="/ideas">
-          <img className="navbar-img" src={ideas} />
-          Ideas
-        </a>
-        <a className="navbar-link" href="/archived">
-          <img className="navbar-img" src={archived} />
-          Archived
-        </a>
-        <a className="navbar-link" href="/employees">
-          <img className="navbar-img" src={teamUp} />
-          Team Up
-        </a>
-        
+        <Navlink 
+          link="submitIdea"
+          icon={addIdeaIcon}
+          linkName="Create New Idea"        
+        />
+        <Navlink 
+          link="assigned"
+          icon={assignedIcon}
+          linkName="Assigned"        
+        />
+        <Navlink 
+          link="submitted"
+          icon={submittedIcon}
+          linkName="Submitted"        
+        />
+        <Navlink 
+          link="employees"
+          icon={employeesIcon}
+          linkName="Employees"        
+        />
+        <Navlink 
+          link="archived"
+          icon={archivedIcon}
+          linkName="Archived"        
+        />
+        <Navlink 
+          link="employees"
+          icon={teamUpIcon}
+          linkName="Team Up"        
+        />
+        <div className="navbar-filler"></div>
       </nav>
     );
   }
