@@ -1,16 +1,16 @@
 /* --- APP  --- */
-.App{
+/* .App{
     width: 100%;
     border: solid blue;
-}
+} */
 
-.MainContainer {
+/* .MainContainer {
     display: flex;
     height: max-content;
     width: 100%;
     font-family: 'roboto', sans-serif;
     border: solid green;
-}
+} */
 
 .table{
     margin: 100px auto;
@@ -116,16 +116,16 @@ div{
 
 /* --- FOOTER --- */
 
-.footer {
+/* .footer {
 	color: white;
 	background-color: #5c88fa;
 	height: 50px;
-}
+} */
 
-.footer > p {
+/* .footer > p {
 	padding: 10px;
 	margin: 0 auto;
-}
+} */
 
 /* --- NAVBAR --- */
 /*FIXME: employee page navbar width changes*/

@@ -1,6 +1,6 @@
-import Header from "./components/bars/Header";
+import Header from "./components/Header";
 import Navbar from "./components/menues/sideMenu/Navbar";
-import Footer from "./components/bars/Footer";
+import Footer from "./components/footer";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
@@ -17,7 +17,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Db from "./Db";
 
-{/*FIXME: mainContainer double components */}
+
 
 function App() {
   return (
@@ -130,7 +130,9 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
-    <Footer />
+      <Footer>
+            <Footer.Title>Technical Interaction Design Group 13</Footer.Title>
+      </Footer>
   </div>
   );
 }
