@@ -29,59 +29,63 @@ export default function Assigned() {
       <>
         {/* TODO: replace with grid */}
         <Container className="container-page" >
-          <div className="container-page-header">
+          <div>
+            <div className="container-page-header">
 
-            <h1><img src={iconAssigned} />Assigned</h1>
+              <h1><img src={iconAssigned} />Assigned</h1>
 
-          </div> 
-          <div className="container-page-body">
-            
-            <div className="searchbar">
-              <img src={iconSearch} />
-                  search ...  
+            </div> 
+            <div className="container-page-body">
+              <div className="container-page-body-inline">
+                <div className="searchbar">
+                  <img src={iconSearch} />
+                      search ...  
+                </div>
+        
+                <div className="icon-container">
+                  <img src={iconArtSmall} />
+                  <img src={iconArtMedium} />
+                  <img src={iconArtLarge} />
+                  <img src={iconArtALL} />
+                </div>
+              </div>
+          
+
+            <div className="accTable-header">
+              <p>Title</p>
             </div>
-      
-            <div className="icon-container">
-              <img src={iconArtSmall} />
-              <img src={iconArtMedium} />
-              <img src={iconArtLarge} />
-              <img src={iconArtALL} />
-            </div>
-          </div>
-
-          <div className="accTable-header">
-            <p>Title</p>
-          </div>
          
          
-          <Accordion className="accordion" defaultActiveKey="0">
-            {assignments.map((assignment, i) => (
-              <>
-                <Accordion.Item eventKey={i}>
-                  <Accordion.Header>
-                    <b>{assignment.get("ideaId").get("title")}</b>
-                  </Accordion.Header>
-                  <p className="deadline">
-                    <b>Deadline:</b>
-                    <i>{" " + assignment.get("deadline")}</i>
-                  </p>
-                  <Accordion.Body>
-                    {assignment.get("ideaId").get("description")}
-                    <br />
-                    <br />
-                    Owner: <b>{assignment.get("userId").get("username")}</b>
-                    <br />
-                    <b>Date Assigned:</b>{" "}
-                    <i>{" " + assignment.get("updatedAt")}</i>
-                    <br />
-                    <br />
-                  </Accordion.Body>
-                </Accordion.Item>
-              
+            <Accordion className="accordion" defaultActiveKey="0">
+              {assignments.map((assignment, i) => (
+                <>
+                  <Accordion.Item eventKey={i}>
+                    <Accordion.Header>
+                      <b>{assignment.get("ideaId").get("title")}</b>
+                    </Accordion.Header>
+                    <p className="deadline">
+                      <b>Deadline:</b>
+                      <i>{" " + assignment.get("deadline")}</i>
+                    </p>
+                    <Accordion.Body>
+                      {assignment.get("ideaId").get("description")}
+                      <br />
+                      <br />
+                      Owner: <b>{assignment.get("userId").get("username")}</b>
+                      <br />
+                      <b>Date Assigned:</b>{" "}
+                      <i>{" " + assignment.get("updatedAt")}</i>
+                      <br />
+                      <br />
+                    </Accordion.Body>
+                  </Accordion.Item>
+                
               </>
             
             ))}
-          </Accordion>
+            </Accordion>
+          </div>
+          </div>
         </Container>
       </>
     );
