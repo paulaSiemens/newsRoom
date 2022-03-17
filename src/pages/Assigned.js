@@ -1,6 +1,7 @@
 import { useEffect, useState, useReducer } from "react";
 import { Accordion, Form, Button } from "react-bootstrap";
 import { Page} from '../components/index';
+import {TitleBar } from '../components/index';
 import Db from "../Db";
 import iconAssigned from "../resources/icons/icon-assigned.svg";
 import iconSearch from "../resources/icons/icon-search.svg";
@@ -51,10 +52,11 @@ export default function Assigned() {
                   </Page.IconContainer>
                 </Page.Inliner>
           
-
-                <div className="accTable-header">
-                  <p>Title</p>
-                </div>
+              
+                <TitleBar.Header>
+                  <TitleBar.Text>Title</TitleBar.Text>
+                </TitleBar.Header>
+                
             
          
             <Accordion className="accordion" defaultActiveKey="0">
@@ -115,9 +117,9 @@ export default function Assigned() {
             </Page.IconContainer>
           </Page.Body>
 
-          <div className="accTable-header">
-            <p>Title</p>
-          </div>
+          <TitleBar.Header>
+            <TitleBar.Text>Title</TitleBar.Text>
+          </TitleBar.Header>
           <Accordion defaultActiveKey="0">
             {assignments
               .filter(

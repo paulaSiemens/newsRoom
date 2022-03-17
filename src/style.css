@@ -159,7 +159,7 @@ div{
     display: flex;
     display: grid;
     gap:5px;
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr;
     grid-template-rows: auto;
     
 }
@@ -168,9 +168,10 @@ div{
     width: 100%;
     height: 90%;
     color: #002B99;
-    padding-top: 15 px; /*FIXME: vertical centering*/
+    padding-top: 20 px; /*FIXME: vertical centering*/
     text-align: left;
-	margin-left: 20;
+	margin-left: 0;
+
     text-decoration: none;
     
 }
@@ -321,12 +322,11 @@ color: #f1f1f1;
     margin: 5px;
     
 } */
-
-.accTable-header{
+/* --- TitleBar component --- */
+/* .accTable-header{
     width: 100%;
     height: 47px;
     margin-bottom: 10px;
-	
     background-color: #0045F6;
 	display: flex;
 	
@@ -338,7 +338,7 @@ color: #f1f1f1;
     padding-top: 10px;
     color: white;
 }
-
+ */
 .accordion{
     height:100%;
 	width: 100%;
