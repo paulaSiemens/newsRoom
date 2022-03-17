@@ -102,24 +102,27 @@ export default function Assigned() {
             <Page.Title><Page.Item src={iconAssigned} />Assigned</Page.Title>
 
           </Page.Header>
+          
           <Page.Body>
-            
-            <div className="searchbar">
-              <img src={iconSearch} alt=" "/>
-                  search ...  
-            </div>
-      
-            <Page.IconContainer>
-              <Page.Item src={iconArtSmall} alt=" "/>
-              <Page.Item src={iconArtMedium}alt=" " />
-              <Page.Item src={iconArtLarge} alt=" "/>
-              <Page.Item src={iconArtALL} alt=" "/>
-            </Page.IconContainer>
-          </Page.Body>
+          <Page.Inliner>
+                  <div className="searchbar">
+                    <img src={iconSearch} alt=" " />
+                        search ...  
+                  </div>
+          
+                  <Page.IconContainer>
+                    <Page.Item src={iconArtSmall} />
+                    <Page.Item src={iconArtMedium} />
+                    <Page.Item src={iconArtLarge} />
+                    <Page.Item src={iconArtALL} />
+                  </Page.IconContainer>
+                </Page.Inliner>
+         
 
           <TitleBar.Header>
             <TitleBar.Text>Title</TitleBar.Text>
           </TitleBar.Header>
+
           <Accordion defaultActiveKey="0">
             {assignments
               .filter(
@@ -208,6 +211,7 @@ export default function Assigned() {
                 </>
               ))}
           </Accordion>
+          </Page.Body>
           </Page.Wrapper>
           </Page>
       </>

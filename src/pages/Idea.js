@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import Db from "../Db";
+import { Page} from '../components/index';
+
 
 
 
@@ -26,6 +28,7 @@ export default function Idea(){
     }
     
     return (<>
+    <Page>
     <Form className="cont--submitIdea">
       <Button
         onClick={(e) => {
@@ -68,6 +71,7 @@ export default function Idea(){
         Submit idea
       </Button>
     </Form>
+    </Page>
   </>
 )
 

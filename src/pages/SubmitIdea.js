@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import Db from "../Db";
-import { useNavigate } from "react-router";
+import { Page} from '../components/index';
+
 
 export default function SubmitIdea() {
   const [title, setTitle] = useState();
@@ -25,6 +26,7 @@ export default function SubmitIdea() {
 
   return (
     <>
+    <Page>
       <Form className="cont--submitIdea">
         <Button
           onClick={(e) => {
@@ -67,6 +69,7 @@ export default function SubmitIdea() {
           Submit idea
         </Button>
       </Form>
+      </Page>
     </>
   );
 }
