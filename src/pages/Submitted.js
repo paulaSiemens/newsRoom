@@ -1,5 +1,7 @@
 import { useEffect, useState, useReducer } from "react";
 import { Accordion, Form, Button,Container} from "react-bootstrap";
+import { Page} from '../components/index';
+import { TitleBar } from '../components/index';
 import Db from "../Db";
 import iconSubmitted from "../resources/icons/icon-submitted.svg";
 import iconSearch from "../resources/icons/icon-search.svg";
@@ -20,32 +22,27 @@ export default function Submitted() {
   if (Db.getUserRole() === "Editor") {
     return (
       <>
-        <Container className="container-page" >
-          <div className="container-page-header">
+        <Page>
+          <Page.Wrapper>
 
-            <h1><img src={iconSubmitted} />Submitted</h1>
-
-          
-          </div> 
-          <div className="container-page-body">
+            <Page.Header>
+              <Page.Title><Page.Item src={iconSubmitted} />Submitted</Page.Title>
+            </Page.Header> 
             
-            <div className="searchbar">
-              <img src={iconSearch} />
-                  search ...  
-            </div>
-         
-       
+            <Page.Body>
+                <Page.Inliner>
+                <div className="container-searchRow">
+                  <div className="searchbar">
+                  <img src={iconSearch} alt=" "/>
+                    search ...  
+                  </div>
+                </div>
+                </Page.Inliner>
 
-          </div>
-
+                  <TitleBar.Header>
+                  <TitleBar.Text>Title</TitleBar.Text>
+                </TitleBar.Header>
       
-     
-        
-      
-      
-
-     
-       
         <Accordion defaultActiveKey="0">
           {ideas.map((idea, i) => (
             <>
@@ -86,30 +83,36 @@ export default function Submitted() {
             </>
           ))}
         </Accordion>
-        </Container>
+        </Page.Body>
+    </Page.Wrapper>
+    </Page>
       </>
       
     );
   } else {
     return (
       <>
-        <Container className="container-page" >
-          <div className="container-page-header">
+         <Page>
+          <Page.Wrapper>
 
-            <h1><img src={iconSubmitted} />Submitted</h1>
+            <Page.Header>
+              <Page.Title><Page.Item src={iconSubmitted} />Submitted</Page.Title>
+            </Page.Header> 
+            
+            <Page.Body>
+              <Page.Inliner>
+            
+              <div className="searchbar">
+                <img src={iconSearch} alt=" "/>
+                    search ...  
+              </div>
+              </Page.Inliner>
+              <TitleBar.Header>
+                  <TitleBar.Text>Title</TitleBar.Text>
+                </TitleBar.Header>
+      
 
           
-          </div> 
-          <div className="container-page-body">
-            
-            <div className="searchbar">
-              <img src={iconSearch} />
-                  search ...  
-            </div>
-         
-       
-
-          </div>
 
        
         
@@ -143,7 +146,9 @@ export default function Submitted() {
         </Accordion>
         
       
-      </Container>
+        </Page.Body>
+    </Page.Wrapper>
+    </Page>
         
       </>
     );
