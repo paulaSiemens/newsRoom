@@ -48,9 +48,9 @@ export default function SideNav() {
     return (
       <nav className="navbar-container">
         <Navlink 
-          link="submitIdea"
+          link="idea"
           icon={addIdeaIcon}
-          linkName="Create New Idea"        
+          linkName="Create Idea"        
         />
         <Navlink 
           link="assigned"
@@ -62,11 +62,8 @@ export default function SideNav() {
           icon={submittedIcon}
           linkName="Submitted"        
         />
-        <Navlink 
-          link="employees"
-          icon={employeesIcon}
-          linkName="Employees"        
-        />
+             
+        
         <Navlink 
           link="archived"
           icon={archivedIcon}

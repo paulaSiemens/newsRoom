@@ -1,5 +1,7 @@
 import { useEffect, useState, useReducer } from "react";
-import { Accordion, Form, Button, Container } from "react-bootstrap";
+import { Accordion, Form, Button } from "react-bootstrap";
+import { Page} from '../components/index';
+import {TitleBar } from '../components/index';
 import Db from "../Db";
 import iconAssigned from "../resources/icons/icon-assigned.svg";
 import iconSearch from "../resources/icons/icon-search.svg";
@@ -28,33 +30,34 @@ export default function Assigned() {
     return (
       <>
         {/* TODO: replace with grid */}
-        <Container className="container-page" >
-          <div>
-            <div className="container-page-header">
+        <Page>
+          <Page.Wrapper>
+            <Page.Header>
 
-              <h1><img src={iconAssigned} />Assigned</h1>
+              <Page.Title><Page.Item src={iconAssigned} />Assigned</Page.Title>
 
-            </div> 
-            <div className="container-page-body">
-              <div className="container-page-body-inline">
-                <div className="searchbar">
-                  <img src={iconSearch} />
-                      search ...  
-                </div>
-        
-                <div className="icon-container">
-                  <img src={iconArtSmall} />
-                  <img src={iconArtMedium} />
-                  <img src={iconArtLarge} />
-                  <img src={iconArtALL} />
-                </div>
-              </div>
+            </Page.Header> 
+            <Page.Body>
+                <Page.Inliner>
+                  <div className="searchbar">
+                    <img src={iconSearch} alt=" " />
+                        search ...  
+                  </div>
           
-
-            <div className="accTable-header">
-              <p>Title</p>
-            </div>
-         
+                  <Page.IconContainer>
+                    <Page.Item src={iconArtSmall} />
+                    <Page.Item src={iconArtMedium} />
+                    <Page.Item src={iconArtLarge} />
+                    <Page.Item src={iconArtALL} />
+                  </Page.IconContainer>
+                </Page.Inliner>
+          
+              
+                <TitleBar.Header>
+                  <TitleBar.Text>Title</TitleBar.Text>
+                </TitleBar.Header>
+                
+            
          
             <Accordion className="accordion" defaultActiveKey="0">
               {assignments.map((assignment, i) => (
@@ -84,38 +87,42 @@ export default function Assigned() {
             
             ))}
             </Accordion>
-          </div>
-          </div>
-        </Container>
+          </Page.Body>
+          </Page.Wrapper>
+        </Page>
       </>
     );
   } else {
     return (
       <>
-       <Container className="container-page" >
-          <div className="container-page-header">
+       <Page >
+        <Page.Wrapper>
+          <Page.Header>
 
-            <h1><img src={iconAssigned} />Assigned</h1>
+            <Page.Title><Page.Item src={iconAssigned} />Assigned</Page.Title>
 
-          </div> 
-          <div className="container-page-body">
-            
-            <div className="searchbar">
-              <img src={iconSearch} />
-                  search ...  
-            </div>
-      
-            <div className="icon-container">
-              <img src={iconArtSmall} />
-              <img src={iconArtMedium} />
-              <img src={iconArtLarge} />
-              <img src={iconArtALL} />
-            </div>
-          </div>
+          </Page.Header>
+          
+          <Page.Body>
+          <Page.Inliner>
+                  <div className="searchbar">
+                    <img src={iconSearch} alt=" " />
+                        search ...  
+                  </div>
+          
+                  <Page.IconContainer>
+                    <Page.Item src={iconArtSmall} />
+                    <Page.Item src={iconArtMedium} />
+                    <Page.Item src={iconArtLarge} />
+                    <Page.Item src={iconArtALL} />
+                  </Page.IconContainer>
+                </Page.Inliner>
+         
 
-          <div className="accTable-header">
-            <p>Title</p>
-          </div>
+          <TitleBar.Header>
+            <TitleBar.Text>Title</TitleBar.Text>
+          </TitleBar.Header>
+
           <Accordion defaultActiveKey="0">
             {assignments
               .filter(
@@ -204,7 +211,9 @@ export default function Assigned() {
                 </>
               ))}
           </Accordion>
-          </Container>
+          </Page.Body>
+          </Page.Wrapper>
+          </Page>
       </>
     );
   }

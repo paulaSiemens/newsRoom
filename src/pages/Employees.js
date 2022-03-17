@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import Db from "../Db";
+import { Page} from '../components/index';
 
 export default function Submitted() {
   const [users, setUsers] = useState();
@@ -16,6 +17,7 @@ export default function Submitted() {
   if (Db.getUserRole() === "Editor") {
     return (
       <>
+      <Page>
         <Table className="table" striped bordered hover>
           <thead>
             <tr>
@@ -43,11 +45,13 @@ export default function Submitted() {
             ))}
           </tbody>
         </Table>
+        </Page>
       </>
     );
   } else {
     return (
       <>
+      <Page>
         <Table striped bordered hover>
           <thead>
             <tr>
@@ -70,6 +74,7 @@ export default function Submitted() {
             ))}
           </tbody>
         </Table>
+        </Page>
       </>
     );
   }

@@ -1,5 +1,8 @@
 import { useEffect, useState, useReducer } from "react";
 import { Accordion, Form, Button, Container } from "react-bootstrap";
+import { Page} from '../components/index';
+import { TitleBar } from '../components/index';
+
 import { Link } from "react-router-dom";
 import Db from "../Db";
 import iconUnassigned from "../resources/icons/icon-uassigned.svg";
@@ -21,24 +24,30 @@ export default function Unassigned() {
 
   return (
     <>
-      <main className="main" >
-      <h1 className="main-title">
-        <img className="main-img" src={iconUnassigned} />
-        Unassigned
-      </h1>
-         
-      <div className="searchbar">
-        <img src={iconSearch} />
-          search ...  
-      </div>
-         
-      <Link to="/ideas">
-      <Button className="btn-primary"> Select Idea </Button>
-      </Link>
+      <Page>
+          <Page.Wrapper>
 
-      <div className="acc-header">
-        <p>Title</p>
-      </div>
+            <Page.Header>
+              <Page.Title><Page.Item src={iconUnassigned} />Unassigned</Page.Title>
+            </Page.Header> 
+            
+            <Page.Body>
+                <Page.Inliner>
+                <div className="container-searchRow">
+                  <div className="searchbar">
+                  <img src={iconSearch} alt=" "/>
+                    search ...  
+                  </div>
+                </div>
+         
+                  <Link to="/ideas">
+                  <Button className="btn-primary"> Select Idea </Button>
+                  </Link>
+                </Page.Inliner>
+
+                  <TitleBar.Header>
+                  <TitleBar.Text>Title</TitleBar.Text>
+                </TitleBar.Header>
       
       <Accordion 
         className="acc-table"
@@ -93,7 +102,9 @@ export default function Unassigned() {
         ))}
       </Accordion>
 
-    </main>
+      </Page.Body>
+    </Page.Wrapper>
+    </Page>
       
     </>
   );

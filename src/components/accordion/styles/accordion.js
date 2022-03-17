@@ -3,16 +3,18 @@ import styled from 'styled-components';
 
 export const Container = styled.section`
     display: flex;
-    margin-left: 23px;
-	padding-top: 10px;
-    border-bottom: 8px solid #222;
+    height:100%;
+	width: 100%;
 `;
 
-export const Frame = styled.div`
-    margin-bottom: 40px;
-
+export const Item = styled.div`
+   
 `
 
+export const Text = styled.p`
+    margin-left: 21px;
+   
+`
 export const Header = styled.div`
     display:flex;
     justify-content: space-between;
@@ -22,6 +24,7 @@ export const Header = styled.div`
 	background-color: #0045f6;
     font-size: 14px;
     background:  #D0DDFF;
-    
-
+`
+export const Body = styled.div`
+   
 `
