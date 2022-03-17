@@ -138,7 +138,7 @@ div{
 
 /* --- FOOTER --- */
 
-.footer{
+/* .footer{
     color: white;
     background-color: #5C88FA;
     height: 50px;
@@ -147,7 +147,7 @@ div{
 .footer > p{
     padding: 10px;
     margin: 0 auto;
-}
+} */
 
 /* --- NAVBAR --- */
 /*FIXME: employee page navbar width changes*/
